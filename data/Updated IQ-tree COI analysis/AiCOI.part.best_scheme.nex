@@ -1,0 +1,10 @@
+#nexus
+begin sets;
+  charset 1stpos = 1-639\3;
+  charset 2ndpos = 2-639\3;
+  charset 3rdpos = 3-639\3;
+  charpartition mymodels =
+    TNe+I: 1stpos,
+    K3Pu+F: 2ndpos,
+    TN+F: 3rdpos;
+end;

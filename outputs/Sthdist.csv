@@ -1,0 +1,9 @@
+,SthBarrington,Olney,Cumberland,MtWilson,MaresForest,Termeil,Dampier,Broadwater
+SthBarrington,,,,,,,,
+Olney,0.28,,,,,,,
+Cumberland,0.39,0.25,,,,,,
+MtWilson,0.41,0.24,0.18,,,,,
+MaresForest,0.50,0.37,0.34,0.27,,,,
+Termeil,0.78,0.77,0.76,0.77,0.79,,,
+Dampier,0.81,0.79,0.78,0.79,0.81,0.29,,
+Broadwater,0.90,0.85,0.86,0.86,0.87,0.67,0.69,

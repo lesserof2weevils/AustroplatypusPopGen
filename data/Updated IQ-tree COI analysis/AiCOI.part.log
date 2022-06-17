@@ -1,0 +1,264 @@
+IQ-TREE multicore version 1.6.12 for Mac OS X 64-bit built Aug 15 2019
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    Jamess-MBP-2.modem (AVX2, FMA3, 16 GB RAM)
+Command: iqtree-1.6.12-MacOSX/bin/iqtree -s data/Updated IQ-tree COI analysis/AiCOI.nex -spp data/Updated IQ-tree COI analysis/AiCOI.part -bb 1000 -o Ne7_G01.ab1
+Seed:    288741 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Mon Nov  1 13:32:54 2021
+Kernel:  AVX+FMA - 1 threads (8 CPU cores detected)
+
+HINT: Use -nt option to specify number of threads because your CPU has 8 cores!
+HINT: -nt AUTO will automatically determine the best number of threads to use.
+
+Reading partition model file data/Updated IQ-tree COI analysis/AiCOI.part ...
+Reading alignment file data/Updated IQ-tree COI analysis/AiCOI.nex ... Nexus format detected
+Alignment has 28 sequences with 639 columns, 286 distinct patterns
+108 parsimony-informative, 106 singleton sites, 425 constant sites
+                       Gap/Ambiguity  Composition  p-value
+   1  BT4a1_LCO1490.ab1       16.28%    passed     16.13%
+   2  BT4a2_LCO1490.ab1        1.10%    passed     29.88%
+   3  BT6a1_D03.ab1            1.72%    passed     36.57%
+   4  BT8a1_LCO1490.ab1        0.94%    passed     96.91%
+   5  BT9c1_E03.ab1            1.56%    passed     98.08%
+   6  BT9c2_F03.ab1            6.10%    passed     97.47%
+   7  BT10a1_LCO1490.ab1       1.10%    passed     97.04%
+   8  BW11a1_LCO1490.ab1      34.27%    passed     79.36%
+   9  BW19d1_LCO1490.ab1      60.88%    passed     44.74%
+  10  BW26a1_LCO1490.ab1      47.42%    passed     56.82%
+  11  Cu6a1_LCO1490.ab1       19.56%    passed     95.84%
+  12  Cu12a1_LCO1490.ab1       7.04%    passed     96.30%
+  13  Da1a1_LCO1490.ab1       15.02%    passed     94.23%
+  14  Da7b1_LCO1490.ab1       24.57%    passed     97.17%
+  15  Da24a1_LCO1490.ab1      26.13%    passed     84.22%
+  16  Do3a1_LCO1490.ab1        8.29%    passed     65.81%
+  17  Do6b1_LCO1490.ab1       10.17%    passed     50.96%
+  18  Ke24d1_LCO1490.ab1      28.64%    passed     98.08%
+  19  MF2a1_LCO1490.ab1       56.65%    passed     66.83%
+  20  MF6b1_LCO1490.ab1       14.55%    passed     84.28%
+  21  MW3a1_LCO1490.ab1       15.18%    passed     89.84%
+  22  MW4a2_LCO1490.ab1       21.91%    passed     96.66%
+  23  NCNP.Pom.M.1218.2.ab1    1.10%    passed     72.42%
+  24  Ne7_G01.ab1              0.63%    failed      1.84%
+  25  Ol18a1_LCO1490.ab1      61.66%    passed     87.25%
+  26  Te4a1_LCO1490.ab1       58.53%    passed     57.74%
+  27  Te6a1_LCO1490.ab1       60.72%    passed     82.19%
+  28  WW4a1_LCO1490.ab1        8.14%    passed     37.71%
+WARNING: 5 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                   21.78%  1 sequences failed composition chi2 test (p-value<5%; df=3)
+NOTE: No CharPartition defined, use all CharSets
+
+Loading 3 partitions...
+Subset	Type	Seqs	Sites	Infor	Invar	Model	Name
+1		28	213	19	169		1stpos
+2		28	213	0	200		2ndpos
+WARNING: No parsimony-informative sites in partition 2ndpos
+3		28	213	89	56		3rdpos
+Degree of missing data: 0.000
+Info: multi-threading strategy over partitions
+
+
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.004 seconds
+NOTE: ModelFinder requires 5 MB RAM!
+Testing GTR+F+G on supermatrix...
+GTR+F+G4 / LnL: -2202.195 / df: 62 / AIC: 4528.390 / AICc: 4541.953 / BIC: 4804.905
+Selecting individual models for 3 charsets using BIC...
+ No. Model        Score       Charset
+   1 TNe+I        1130.221    1stpos
+   2 K3Pu+F       725.177     2ndpos
+   3 TN+F         2183.419    3rdpos
+Full partition model BIC score: 4392.310 (LnL: -1976.518  df:68)
+Partition information was printed to data/Updated IQ-tree COI analysis/AiCOI.part.best_scheme.nex
+Partition information in Raxml format was printed to data/Updated IQ-tree COI analysis/AiCOI.part.best_scheme
+
+All model information printed to data/Updated IQ-tree COI analysis/AiCOI.part.model.gz
+CPU time for ModelFinder: 3.399 seconds (0h:0m:3s)
+Wall-clock time for ModelFinder: 3.510 seconds (0h:0m:3s)
+Generating 1000 samples for ultrafast bootstrap (seed: 288741)...
+
+NOTE: 1 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -2308.764
+Current log-likelihood at step 1: -2027.992
+Current log-likelihood at step 2: -2000.945
+Current log-likelihood at step 3: -1993.703
+Current log-likelihood at step 4: -1988.944
+Current log-likelihood at step 5: -1985.536
+Current log-likelihood at step 6: -1982.989
+Current log-likelihood at step 7: -1981.065
+Current log-likelihood at step 8: -1979.580
+Current log-likelihood at step 9: -1978.418
+Current log-likelihood at step 10: -1977.500
+Current log-likelihood at step 11: -1976.752
+Current log-likelihood at step 12: -1976.158
+Current log-likelihood at step 13: -1975.677
+Current log-likelihood at step 14: -1975.283
+Current log-likelihood at step 15: -1974.959
+Current log-likelihood at step 16: -1974.689
+Current log-likelihood at step 17: -1974.471
+Current log-likelihood at step 18: -1974.283
+Current log-likelihood at step 19: -1974.107
+Current log-likelihood at step 20: -1973.970
+Current log-likelihood at step 21: -1973.854
+Current log-likelihood at step 22: -1973.758
+Partition-specific rates:  0.397 0.061 2.542
+Parameters optimization took 21 rounds (0.150 sec)
+
+
+WARNING: Estimated model parameters are at boundary that can cause numerical instability!
+
+Computing ML distances based on estimated model parameters... 0.007 sec
+Computing BIONJ tree...
+0.001 seconds
+Log-likelihood of BIONJ tree: -1978.047
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 0.156 second
+Computing log-likelihood of 98 initial trees ... 0.319 seconds
+Current best score: -1973.261
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -1973.043
+Current log-likelihood at step 1: -1972.919
+Current log-likelihood at step 2: -1972.835
+Parameters optimization took 1 rounds (0.009 sec)
+
+
+WARNING: Estimated model parameters are at boundary that can cause numerical instability!
+
+BETTER TREE FOUND at iteration 1: -1972.835
+UPDATE BEST LOG-LIKELIHOOD: -1972.833
+UPDATE BEST LOG-LIKELIHOOD: -1972.833
+Iteration 10 / LogL: -1972.833 / Time: 0h:0m:0s
+UPDATE BEST LOG-LIKELIHOOD: -1972.832
+Iteration 20 / LogL: -1973.523 / Time: 0h:0m:1s
+Finish initializing candidate tree set (5)
+Current best tree score: -1972.832 / CPU time: 1.042
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+UPDATE BEST LOG-LIKELIHOOD: -1972.832
+Iteration 30 / LogL: -1972.833 / Time: 0h:0m:1s (0h:0m:4s left)
+Iteration 40 / LogL: -1972.833 / Time: 0h:0m:2s (0h:0m:3s left)
+UPDATE BEST LOG-LIKELIHOOD: -1972.832
+Iteration 50 / LogL: -1973.453 / Time: 0h:0m:2s (0h:0m:2s left)
+Log-likelihood cutoff on original alignment: -1996.299
+Iteration 60 / LogL: -1976.803 / Time: 0h:0m:3s (0h:0m:2s left)
+Iteration 70 / LogL: -1974.423 / Time: 0h:0m:3s (0h:0m:1s left)
+Iteration 80 / LogL: -1972.843 / Time: 0h:0m:4s (0h:0m:1s left)
+Iteration 90 / LogL: -1973.054 / Time: 0h:0m:4s (0h:0m:0s left)
+Iteration 100 / LogL: -1972.835 / Time: 0h:0m:4s (0h:0m:0s left)
+Log-likelihood cutoff on original alignment: -1995.928
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.974
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -1972.210
+Current log-likelihood at step 1: -1972.005
+Current log-likelihood at step 2: -1971.898
+Current log-likelihood at step 3: -1971.829
+Parameters optimization took 2 rounds (0.020 sec)
+
+
+WARNING: Estimated model parameters are at boundary that can cause numerical instability!
+
+BETTER TREE FOUND at iteration 108: -1971.829
+Iteration 110 / LogL: -1975.380 / Time: 0h:0m:5s (0h:0m:4s left)
+Iteration 120 / LogL: -1973.288 / Time: 0h:0m:5s (0h:0m:4s left)
+UPDATE BEST LOG-LIKELIHOOD: -1971.827
+Iteration 130 / LogL: -1971.828 / Time: 0h:0m:6s (0h:0m:3s left)
+Iteration 140 / LogL: -1971.828 / Time: 0h:0m:6s (0h:0m:3s left)
+Iteration 150 / LogL: -1971.832 / Time: 0h:0m:7s (0h:0m:2s left)
+Log-likelihood cutoff on original alignment: -1996.781
+Iteration 160 / LogL: -1972.684 / Time: 0h:0m:7s (0h:0m:2s left)
+Iteration 170 / LogL: -1972.217 / Time: 0h:0m:8s (0h:0m:1s left)
+Iteration 180 / LogL: -1992.053 / Time: 0h:0m:8s (0h:0m:1s left)
+Iteration 190 / LogL: -1971.829 / Time: 0h:0m:8s (0h:0m:0s left)
+Iteration 200 / LogL: -1971.829 / Time: 0h:0m:9s (0h:0m:0s left)
+Log-likelihood cutoff on original alignment: -1995.928
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.947
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+Iteration 210 / LogL: -1972.704 / Time: 0h:0m:9s (0h:0m:4s left)
+Iteration 220 / LogL: -1973.554 / Time: 0h:0m:10s (0h:0m:3s left)
+Iteration 230 / LogL: -1971.831 / Time: 0h:0m:10s (0h:0m:3s left)
+UPDATE BEST LOG-LIKELIHOOD: -1971.827
+Iteration 240 / LogL: -1972.699 / Time: 0h:0m:11s (0h:0m:2s left)
+Iteration 250 / LogL: -1971.827 / Time: 0h:0m:11s (0h:0m:2s left)
+Log-likelihood cutoff on original alignment: -1995.928
+Iteration 260 / LogL: -1971.829 / Time: 0h:0m:12s (0h:0m:1s left)
+Iteration 270 / LogL: -1971.828 / Time: 0h:0m:12s (0h:0m:1s left)
+Iteration 280 / LogL: -1972.698 / Time: 0h:0m:13s (0h:0m:0s left)
+Iteration 290 / LogL: -1972.699 / Time: 0h:0m:13s (0h:0m:0s left)
+Iteration 300 / LogL: -1972.714 / Time: 0h:0m:13s (0h:0m:0s left)
+Log-likelihood cutoff on original alignment: -1995.928
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.989
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+Iteration 310 / LogL: -1971.828 / Time: 0h:0m:14s (0h:0m:4s left)
+Iteration 320 / LogL: -1971.834 / Time: 0h:0m:14s (0h:0m:3s left)
+Iteration 330 / LogL: -1971.958 / Time: 0h:0m:15s (0h:0m:3s left)
+Iteration 340 / LogL: -1972.774 / Time: 0h:0m:15s (0h:0m:2s left)
+Iteration 350 / LogL: -1971.828 / Time: 0h:0m:16s (0h:0m:2s left)
+Log-likelihood cutoff on original alignment: -1996.501
+Iteration 360 / LogL: -1971.828 / Time: 0h:0m:16s (0h:0m:1s left)
+Iteration 370 / LogL: -1971.836 / Time: 0h:0m:17s (0h:0m:1s left)
+Iteration 380 / LogL: -1971.828 / Time: 0h:0m:17s (0h:0m:0s left)
+Iteration 390 / LogL: -1972.701 / Time: 0h:0m:18s (0h:0m:0s left)
+Iteration 400 / LogL: -2024.877 / Time: 0h:0m:18s (0h:0m:0s left)
+Log-likelihood cutoff on original alignment: -1996.501
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.996
+TREE SEARCH COMPLETED AFTER 400 ITERATIONS / Time: 0h:0m:18s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+Initial log-likelihood: -1971.827
+Current log-likelihood at step 1: -1971.775
+Current log-likelihood at step 2: -1971.734
+Current log-likelihood at step 3: -1971.703
+Current log-likelihood at step 4: -1971.677
+Current log-likelihood at step 5: -1971.654
+Current log-likelihood at step 6: -1971.636
+Current log-likelihood at step 7: -1971.619
+Current log-likelihood at step 8: -1971.602
+Current log-likelihood at step 9: -1971.589
+Current log-likelihood at step 10: -1971.579
+Partition-specific rates:  0.403 0.048 2.549
+Parameters optimization took 9 rounds (0.047 sec)
+
+
+WARNING: Estimated model parameters are at boundary that can cause numerical instability!
+
+BEST SCORE FOUND : -1971.579
+Creating bootstrap support values...
+Split supports printed to NEXUS file data/Updated IQ-tree COI analysis/AiCOI.part.splits.nex
+Total tree length: 1.456
+
+Total number of iterations: 400
+CPU time used for tree search: 18.420 sec (0h:0m:18s)
+Wall-clock time used for tree search: 18.498 sec (0h:0m:18s)
+Total CPU time used: 18.736 sec (0h:0m:18s)
+Total wall-clock time used: 18.822 sec (0h:0m:18s)
+
+Computing bootstrap consensus tree...
+Reading input file data/Updated IQ-tree COI analysis/AiCOI.part.splits.nex...
+28 taxa and 348 splits.
+Consensus tree written to data/Updated IQ-tree COI analysis/AiCOI.part.contree
+Reading input trees file data/Updated IQ-tree COI analysis/AiCOI.part.contree
+Log-likelihood of consensus tree: -1972.654
+
+Analysis results written to: 
+  IQ-TREE report:                data/Updated IQ-tree COI analysis/AiCOI.part.iqtree
+  Maximum-likelihood tree:       data/Updated IQ-tree COI analysis/AiCOI.part.treefile
+  Likelihood distances:          data/Updated IQ-tree COI analysis/AiCOI.part.mldist
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          data/Updated IQ-tree COI analysis/AiCOI.part.splits.nex
+  Consensus tree:                data/Updated IQ-tree COI analysis/AiCOI.part.contree
+  Screen log file:               data/Updated IQ-tree COI analysis/AiCOI.part.log
+
+Date and Time: Mon Nov  1 13:33:16 2021

@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><beast beautitemplate='Standard' beautistatus='noAutoSetClockRate' namespace="beast.core:beast.evolution.alignment:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.evolution.likelihood" required="" version="2.6">
+
+
+    <data
+id="AiCOI"
+spec="Alignment">
+                        <sequence id="seq_BT4a1_LCO1490.ab1" spec="Sequence" taxon="BT4a1_LCO1490.ab1" totalcount="4" value="--------------------------------------------------------ATCCTTTATTGGAAATGACCAAATTTATAATGTTATCGTAACTGCCCATGCATTCATTATAATTTTCTTTATAGTAATACCTATTATAATTGGAGGATTTGGAAATTGACTAGTTCCATTAATATTAGGAGCTCCTGATATAGCTTTCCCTCGCTTAAACAATATAAGATTCTGATTATTACCACCTTCACTCTCATTTTTAATTTTAAGAAGAATAGTAGAGAAAGGAGCCGGAACAGGATGAACTGTATATCCTCCTCTAGCCTCTAATATTGCACATAGAGGAGCTTCTGTAGATCTAGCAATTTTTAGTTTACATATAGCAGGTGTCTCTTCAATTTTAGGAGCTATTAATTTTATTTCAACTGCTATTAATATACGTCCACAAGGAATAAATATAGATCAAATACCTTTATTTGTTTGAGCTGTTCTTATTACAGCTGTATTACTCCTCTTAAGTCTCCCTGTATTAGCCGGAGCTATTACTATATTATTAACTGATCGCAACATTAACACTTGTTTTTTTGACCCAGCA------------------------------------------------"/>
+                        <sequence id="seq_BT4a2_LCO1490.ab1" spec="Sequence" taxon="BT4a2_LCO1490.ab1" totalcount="4" value="-----TATTGGAACATCCCTAAGAATAATTATCCGCATTGAACTAGGTACTCCTAGATCCTTTATTGGAAATGACCAAATTTATAATGTTATCGTAACTGCCCATGCATTCATTATAATTTTCTTTATAGTAATACCTATTATAATTGGAGGATTTGGAAATTGACTAGTTCCATTAATATTAGGAGCTCCTGATATAGCTTTCCCTCGCTTAAACAATATAAGATTCTGATTATTACCACCTTCACTCTCATTTTTAATTTTAAGAAGAATAGTAGAGAAAGGAGCCGGAACAGGATGAACTGTATATCCTCCTCTAGCCTCTAATATTGCACATAGAGGAGCTTCTGTAGATCTAGCAATTTTTAGTTTACATATAGCAGGTGTCTCTTCAATTTTAGGAGCTATTAATTTTATTTCAACTGCTATTAATATACGTCCACAAGGAATAAATATAGATCAAATACCTTTATTTGTTTGAGCTGTTCTTATTACAGCTGTATTACTCCTCTTAAGTCTCCCTGTATTAGCCGGAGCTATTACTATATTATTAACTGATCGCAACATTAACACTTGTTTTTTTGACCCAGCAGGTGGAGGAGACCCAATCCTATACCAGCACCTTTTTTGATTTTTTG--"/>
+                        <sequence id="seq_BT6a1_D03.ab1" spec="Sequence" taxon="BT6a1_D03.ab1" totalcount="4" value="GGAATTATTGGAACATCCCTAAGAATAATTATCCGCATTGAACTAGGTACTCCTAGATCCTTTATTGGAAATGACCAAATTTATAATGTTATCGTAACTGCCCATGCATTCATTATAATTTTCTTTATAGTAATACCTATTATAATTGGAGGATTTGGAAATTGACTAGTTCCATTAATATTAGGAGCTCCTGATATAGCTTTCCCTCGCTTAAACAATATAAGATTCTGATTATTACCACCTTCACTCTCATTTTTAATTTTAAGAAGAATAGTAGAGAAAGGAGCCGGAACAGGATGAACTGTATATCCTCCTCTAGCCTCTAATATTGCACATAGAGGAGCTTCTGTAGATCTAGCAATTTTTAGTTTACATATAGCAGGTGTCTCTTCAATTTTAGGAGCTATTAATTTTATTTCAACTGCTATTAATATACGTCCACAAGGAATAAATATAGATCAAATACCTTTATTTGTTTGAGCTGTTCTTATTACAGCTGTATTACTCCTCTTAAGTCTCCCTGTATTAGCCGGAGCTATTACTATATTATTAACTGATCGCAACATTAACACTTGTTTTTTTGACCCAGCAGGTGGAGGAGACCCAATCCTATACCAGCACCTTTTTT-----------"/>
+                        <sequence id="seq_BT8a1_LCO1490.ab1" spec="Sequence" taxon="BT8a1_LCO1490.ab1" totalcount="4" value="-----TATTGGAACATCCTTAAGAATAATTATCCGTATTGAACTAGGTACCCCCAGATCCTTCATCGGAAATGACCAAATTTATAATGTTATCGTCACTGCCCATGCATTCATTATAATTTTCTTTATAGTAATACCCATTATAATTGGAGGATTCGGAAATTGACTAGTACCTCTCATACTAGGAGCCCCTGATATAGCTTTTCCACGACTAAATAATATAAGATTCTGGCTATTACCCCCCTCACTTTCATTCTTAATCTTGAGAAGAATAGTGGAAAAAGGAGCTGGTACAGGATGAACTGTTTACCCACCTCTAGCCTCTAACATTGCACACAGAGGATCCTCTGTAGATTTAGCAATTTTTAGCCTACACATAGCGGGTGTCTCTTCAATCTTGGGAGCTATTAATTTTATTTCAACTGCTATCAACATACGTCCTCAAGGAATAAATTTAGATCAAATACCTTTATTTGTCTGAGCAGTTCTCATTACTGCTGTACTCCTTCTACTTAGCCTCCCTGTTTTAGCTGGAGCCATTACTATACTATTAACTGACCGTAATATTAACACTTGTTTTTTTGATCCAGCAGGTGGTGGAGATCCTATTCTATACCAACACCTTTTCTGATTTTTTGG-"/>
+                        <sequence id="seq_BT9c1_E03.ab1" spec="Sequence" taxon="BT9c1_E03.ab1" totalcount="4" value="GGAATTATTGGAACATCCTTAAGAATAATTATCCGTATTGAACTAGGTACCCCCAGATCCTTCATCGGAAATGACCAAATTTATAATGTTATCGTCACTGCCCATGCATTCATTATAATTTTCTTTATAGTAATACCCATTATAATTGGAGGATTCGGAAATTGACTAGTACCTCTCATACTAGGAGCCCCTGATATAGCTTTTCCACGACTAAATAATATAAGATTCTGGCTATTACCCCCCTCACTTTCATTCTTAATCTTGAGAAGAATAGTGGAAAAAGGAGCTGGTACAGGATGAACTGTTTACCCACCTCTAGCCTCTAACATTGCACACAGAGGATCCTCTGTAGATTTAGCAATTTTTAGCCTACACATAGCGGGTGTCTCTTCAATCTTGGGAGCTATTAATTTTATTTCAACTGCTATCAACATACGTCCTCAAGGAATAAATTTAGATCAAATACCTTTATTTGTCTGAGCAGTTCTCATTACTGCTGTACTCCTTCTACTTAGCCTCCCTGTTTTAGCTGGAGCCATTACTATACTATTAACTGACCGTAATATTAACACTTGTTTTTTTGATCCAGCAGGTGGTGGAGATCCTATTCTATACCAACACCTTTTCTG----------"/>
+                        <sequence id="seq_BT9c2_F03.ab1" spec="Sequence" taxon="BT9c2_F03.ab1" totalcount="4" value="GGAATTATTGGAACATCCTTAAGAATAATTATCCGTATTGAACTAGGTACCCCCAGATCCTTCATCGGAAATGACCAAATTTATAATGTTATCGTCACTGCCCATGCATTCATTATAATTTTCTTTATAGTAATACCCATTATAATTGGAGGATTCGGAAATTGACTAGTACCTCTCATACTAGGAGCCCCTGATATAGCTTTTCCACGACTAAATAATATAAGATTCTGGCTATTACCCCCCTCACTTTCATTCTTAATCTTGAGAAGAATAGTGGAAAAAGGAGCTGGTACAGGATGAACTGTTTACCCACCTCTAGCCTCTAACATTGCACACAGAGGATCCTCTGTAGATTTAGCAATTTTTAGCCTACACATAGCGGGTGTCTCTTCAATCTTGGGAGCTATTAATTTTATTTCAACTGCTATCAACATACGTCCTCAAGGAATAAATTTAGATCAAATACCTTTATTTGTCTGAGCAGTTCTCATTACTGCTGTACTCCTTCTACTTAGCCTCCCTGTTTTAGCTGGAGCCATTACTATACTATTAACTGACCGTAATATTAACACTTGTTTTTTTGATCCAGCAGGTGGTGGA---------------------------------------"/>
+                        <sequence id="seq_BT10a1_LCO1490.ab1" spec="Sequence" taxon="BT10a1_LCO1490.ab1" totalcount="4" value="-----TATTGGAACATCCTTAAGAATAATTATCCGTATTGAACTAGGTACCCCCAGATCCTTCATCGGAAATGACCAAATTTATAATGTTATCGTCACTGCCCATGCATTCATTATAATTTTCTTTATAGTAATACCCATTATAATTGGAGGATTCGGAAATTGACTAGTACCTCTCATACTAGGAGCCCCTGATATAGCTTTTCCACGACTAAATAATATAAGATTCTGGCTATTACCCCCCTCACTTTCATTCTTAATCTTGAGAAGAATAGTGGAAAAAGGAGCTGGTACAGGATGAACTGTTTACCCACCTCTAGCCTCTAACATTGCACACAGAGGATCCTCTGTAGATTTAGCAATTTTTAGCCTACACATAGCGGGTGTCTCTTCAATCTTGGGAGCTATTAATTTTATTTCAACTGCTATCAACATACGTCCTCAAGGAATAAATTTAGATCAAATACCTTTATTTGTCTGAGCAGTTCTCATTACTGCTGTACTCCTTCTACTTAGCCTCCCTGTTTTAGCTGGAGCCATTACTATACTATTAACTGACCGTAATATTAACACTTGTTTTTTTGATCCAGCAGGTGGTGGAGATCCTATTCTATACCAACACCTTTTCTGATTTTTTG--"/>
+                        <sequence id="seq_BW11a1_LCO1490.ab1" spec="Sequence" taxon="BW11a1_LCO1490.ab1" totalcount="4" value="----------------------------------------------------------------------------------------TTATCGTCACTGCCCATGCATTCATTATAATTTTCTTTATGGTAATACCCATTATAATTGGAGGATTCGGAAATTGACTAGTACCTCTCATACTAGGAGCCCCTGATATAGCTTTCCCACGACTAAATAATATAAGATTCTGACTATTACCCCCCTCACTTTCATTCTTAATCTTGAGAAGAATAGTAGAAAAAGGAGCTGGTACAGGATGAACTGTCTACCCACCCCTAGCCTCTAACATTGCACACAGAGGATCCTCTGTAGATTTAGCAATTTTTAGCCTACACATAGCAGGTGTCTCTTCAATCTTGGGAGCTATTAATTTTATTTCAACTGCTATCAACATACGTCCTCAAGGAATAAATTTAGACCAAATACCTTTATTTGTCTGAGCAGTTCTCATTACTGCTGTACTCCTCC-----------------------------------------------------------------------------------------------------------------------------------"/>
+                        <sequence id="seq_BW19d1_LCO1490.ab1" spec="Sequence" taxon="BW19d1_LCO1490.ab1" totalcount="4" value="-----------------------------------------------------------------------------------------------------------------------------------AATACCCATTATAATTGGAGGATTCGGAAATTGACTAGTACCTCTTATACTAGGAGCCCCTGATATAGCTTTCCCACGACTAAATAATATAAGATTCTGACTATTACCCCCGTCACTTTCATTCTTAATCTTGAGAAGAATAGTAGAAAAAGGAGCTGGTACAGGATGAACTGTCTATCCCCCTCTAGCCTCTAACATTGCACACAGAGGATCCTCTGTAGATTTAGCAATTTTTAGCCTACACATAGCA------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+                        <sequence id="seq_BW26a1_LCO1490.ab1" spec="Sequence" taxon="BW26a1_LCO1490.ab1" totalcount="4" value="----------------------------------------------------------------------------------------------------------------------------------------------------------TCGGAAATTGACTAGTACCTCTCATACTAGGAGCCCCTGATATAGCTTTCCCACGACTAAATAATATAAGATTCTGACTATTACCCCCCTCACTTTCATTCTTAATCTTGAGAAGAATAGTAGAAAAAGGAGCTGGTACAGGATGAACTGTCTACCCACCCCTAGCCTCTAACATTGCACACAGAGGATCCTCTGTAGATTTAGCAATTTTTAGCCTACACATAGCAGGTGTCTCTTCAATCTTGGGAGCTATTAATTTTATTTCAACTGCTATCAACATACGTCCTCAAGGAATAAATTTAGACCAAATACCTTTATTTGTCTGAGCAGTTCTCA-----------------------------------------------------------------------------------------------------------------------------------------------------"/>
+                        <sequence id="seq_Cu6a1_LCO1490.ab1" spec="Sequence" taxon="Cu6a1_LCO1490.ab1" totalcount="4" value="-------------------------------------------------------------------------ACCAAATTTATAATGTTATCGTCACTGCCCATGCATTCATTATAATTTTCTTTATAGTAATACCCATTATAATTGGAGGATTCGGAAATTGACTAGTACCTCTCATACTAGGAGCCCCTGATATAGCTTTTCCACGACTAAATAATATAAGATTCTGGCTATTACCCCCCTCACTTTCATTCTTAATCTTGAGAAGAATAGTGGAAAAAGGAGCTGGTACAGGATGAACTGTTTATCCACCTCTAGCCTCTAACATTGCACACAGAGGATCCTCTGTAGATTTAGCAATTTTTAGCCTACATATAGCGGGTGTCTCTTCAATCTTGGGAGCTATTAATTTTATTTCAACTGCTATCAACATACGTCCTCAAGGAATAAATTTAGACCAAATACCTTTATTTGTATGAGCAGTTCTCATTACTGCTGTACTCCTTCTACTTAGCCTCCCTGTTTTAGCTGGAGCCATTACTATACTATTAACTGACCGTAATATTAACACTTGTTTTTTTGATCC----------------------------------------------------"/>
+                        <sequence id="seq_Cu12a1_LCO1490.ab1" spec="Sequence" taxon="Cu12a1_LCO1490.ab1" totalcount="4" value="------------------------------------ATTGAACTAGGTACCCCAAGATCCTTCATCGGAAATGACCAAATTTATAATGTTATCGTCACTGCCCATGCATTCATTATAATTTTCTTTATAGTAATACCCATTATAATTGGAGGATTCGGAAATTGACTAGTACCTCTCATACTAGGAGCCCCTGATATAGCTTTTCCACGACTAAATAATATAAGATTCTGGCTATTACCCCCCTCACTTTCATTCTTAATCTTGAGAAGAATAGTGGAAAAAGGAGCTGGTACAGGATGAACTGTTTATCCACCTCTAGCCTCTAACATTGCACACAGAGGATCCTCTGTAGATTTAGCAATTTTTAGCCTACATATAGCGGGTGTCTCTTCAATCTTGGGAGCTATTAATTTTATTTCAACTGCTATCAACATACGTCCTCAAGGAATAAATTTAGACCAAATACCTTTATTTGTATGAGCAGTTCTCATTACTGCTGTACTCCTTCTACTTAGCCTCCCTGTTTTAGCTGGAGCCATTACTATACTATTAACTGACCGTAATATTAACACTTGTTTTTTTGATCCAGCAGGTGGCGGAGACCCTATTCTATACCAACACCTTTTCTGA---------"/>
+                        <sequence id="seq_Da1a1_LCO1490.ab1" spec="Sequence" taxon="Da1a1_LCO1490.ab1" totalcount="4" value="------------------------------------------------ACCCCAAGATCCTTCATCGGAAATGACCAAATTTATAATGTTATCGTCACTGCCCATGCATTCATTATAATTTTCTTTATAGTAATACCCATTATAATTGGGGGATTCGGGAATTGACTGGTACCTCTCATACTAGGAGCCCCTGATATAGCTTTCCCACGACTAAATAATATAAGATTCTGGCTATTACCTCCCTCACTTTCATTCTTAATCTTGAGAAGAATAGTAGAAAAAGGAGCTGGTACAGGATGAACTGTTTATCCACCTCTAGCCTCTAACATTGCACACAGAGGATCCTCTGTAGATTTAGCAATTTTTAGCCTACACATAGCAGGTGTCTCTTCAATCTTGGGAGCTATTAATTTTATTTCAACTGCTATCAACATACGTCCTCAAGGAATAAATTTAGACCAAATACCTTTATTTGTCTGAGCAGTTCTCATTACTGCTGTACTCCTCCTACTTAGCCTCCCTGTTTTAGCTGGAGCCATTACTATATTATTAACTGACCGTAATATTAACACTTGTTTTTTTGATCCAGCA------------------------------------------------"/>
+                        <sequence id="seq_Da7b1_LCO1490.ab1" spec="Sequence" taxon="Da7b1_LCO1490.ab1" totalcount="4" value="---------------------------------------------------------------ATCGGAAATGACCAAATTTATAATGTTATCGTCACTGCCCATGCATTCATTATAATTTTCTTTATAGTAATACCCATTATAATTGGAGGATTCGGGAATTGACTGGTACCTCTCATACTAGGAGCCCCTGATATAGCTTTCCCACGACTAAATAATATAAGATTCTGGCTATTACCTCCCTCACTTTCATTCTTAATCTTGAGAAGAATAGTAGAAAAAGGAGCTGGTACAGGATGAACTGTTTATCCACCTCTAGCCTCTAACATTGCACACAGAGGATCCTCTGTAGATTTAGCAATTTTTAGCCTACACATAGCAGGTGTCTCTTCAATCTTGGGAGCTATTAATTTTATTTCAACTGCTATCAACATACGTCCTCAAGGAATAAATTTAGACCAAATACCTTTATTTGTCTGAGCAGTTCTCATTACTGCTGTACTCCTCCTACTTAGCCTCCCTGTTTTAGCTGGAGCCATTACTAT----------------------------------------------------------------------------------------------"/>
+                        <sequence id="seq_Da24a1_LCO1490.ab1" spec="Sequence" taxon="Da24a1_LCO1490.ab1" totalcount="4" value="-----------------------------------------------------------------CGGAAATGACCAAATTTATAATGTTATCGTCACTGCCCATGCATTCATTATAATTTTCTTTATAGTAATACCCATTATAATTGGGGGATTCGGGAATTGACTGGTACCTCTCATACTAGGAGCCCCTGATATAGCTTTCCCACGACTAAATAATATAAGATTCTGGCTATTACCCCCCTCACTTTCATTCTTAATCTTGAGAAGAATAGTAGAAAAAGGAGCTGGTACAGGATGAACTGTTTATCCACCTCTAGCCTCTAACATTGCACACAGAGGATCCTCTGTAGATTTAGCAATTTTTAGCCTACACATAGCAGGTGTCTCTTCAATCTTGGGAGCTATTAATTTTATTTCAACTGCTATCAACATACGTCCTCAAGGAATAAATTTAGACCAAATACCTTTATTTGTCTGAGCAGTTCTCATTACTGCTGTACTCCTCCTACTTAGCCTCCCTGTTTTAGCTGGAGCC------------------------------------------------------------------------------------------------------"/>
+                        <sequence id="seq_Do3a1_LCO1490.ab1" spec="Sequence" taxon="Do3a1_LCO1490.ab1" totalcount="4" value="------------------------------------------------ACTCCCAGATCCTTTATTGGAAATGACCAAATTTATAATGTTATCGTAACTGCCCATGCATTCATTATAATTTTCTTTATAGTAATACCTATTATAATTGGAGGATTTGGAAATTGATTAGTTCCATTAATATTAGGAGCTCCTGACATAGCCTTCCCTCGCTTAAATAATATAAGATTCTGACTACTACCTCCTTCACTTTCATTCTTAATTTTAAGAAGAATAGTAGAAAAAGGAGCCGGTACAGGATGAACTGTATACCCCCCTCTAGCCTCTAATATTGCACATAGAGGAGCTTCTGTAGATCTAGCAATTTTTAGCTTACATATAGCCGGTGTCTCTTCAATTTTAGGAGCTATTAATTTTATTTCAACTGCTATTAATATACGTCCACAAGGAATAAATATAGATCAAATACCTTTATTTGTCTGAGCTGTTCTTATTACAGCTGTATTACTTCTCTTAAGTCTCCCCGTCTTAGCTAGAGCTATTACTATATTATTAACTGATCGCAACATTAACACCTGTTTTTTTGATCCAGCAGGTGGAGGAGACCCTATCCTATACCAGCACCTTTTTTGATTTT-----"/>
+                        <sequence id="seq_Do6b1_LCO1490.ab1" spec="Sequence" taxon="Do6b1_LCO1490.ab1" totalcount="4" value="-------------------------------------------------------------TTATTGGAAATGACCAAATTTATAATGTTATCGTAACTGCCCATGCATTCATTATAATTTTCTTTATAGTAATACCTATTATAATTGGAGGATTTGGAAATTGATTAGTTCCATTAATATTAGGAGCTCCTGACATAGCCTTCCCTCGCTTAAATAATATAAGATTCTGACTACTACCTCCTTCACTTTCATTCTTAATTTTAAGAAGAATAGTAGAAAAAGGAGCCGGTACAGGATGAACTGTATACCCCCCTCTAGCCTCTAATATTGCACATAGAGGAGCTTCTGTAGATCTAGCAATTTTTAGCTTACATATAGCCGGTGTCTCTTCAATTTTAGGAGCTATTAATTTTATTTCAACTGCTATTAATATACGTCCACAAGGAATAAATATAGATCAAATACCTTTATTTGTCTGAGCTGTTCTTATTACAGCTGTATTACTTCTCTTAAGTCTCCCCGTCTTAGCTGGAGCTATTACTATATTATTAACTGATCGCAACATTAACACCTGTTTTTTTGATCCAGCAGGTGGAGGAGACCCTATCCTATACCAGCACCTTTTTTGATTTTT----"/>
+                        <sequence id="seq_Ke24d1_LCO1490.ab1" spec="Sequence" taxon="Ke24d1_LCO1490.ab1" totalcount="4" value="--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------AGGAGCTCCTGACATAGCCTTCCCTCGCTTAAACAATATAAGATTCTGACTACTACCTCCTTCACTTTCATTCTTAATTTTAAGAAGAATAGTAGAAAAAGGAGCCGGAACAGGATGAACTGTATACCCCCCTCTAGCCTCTAATATTGCACATAGAGGAGCTTCTGTAGATCTAGCAATTTTTAGCTTACATATAGCCGGTGTCTCTTCAATTTTAGGAGCTATTAATTTTATTTCAACTGCTATTAATATACGTCCACAAGGAATAAATATAGATCAAATACCTTTATTTGTCTGAGCTGTTCTTATTACAGCTGTATTACTTCTCTTAAGTCTCCCCGTCTTAGCTGGAGCTATTACTATATTATTAACTGATCGCAACATTAACACCTGTTTTTTTGATCCAGCAGGTGGAGGAGACCCTATCCTATACCAGCACCTTTTTTGATTTTTTGG-"/>
+                        <sequence id="seq_MF2a1_LCO1490.ab1" spec="Sequence" taxon="MF2a1_LCO1490.ab1" totalcount="4" value="-----------------------------------------------------------------CGGAAATGACCAAATTTATAATGTTATCGTCACTGCCCATGCATTCATTATAATTTTCTTTATAGTAATACCCATTATAATTGGAGGATTCGGAAATTGACTGGTACCTCTCATACTAGGAGCCCCTGATATAGCTTTTCCACGACTAAATAATATAAGATTCTGGCTATTACCCCCCTCACTTTCATTCTTAATCTTGAGAAGAATAGTGGAAAAAGGAGCTGGTACAGGATGAACTGTTTACCCACCTCTAGCCTCTAACATTGCACACAGAGGA---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+                        <sequence id="seq_MF6b1_LCO1490.ab1" spec="Sequence" taxon="MF6b1_LCO1490.ab1" totalcount="4" value="-----------------------------------------------------------------------------------------TATCGTCACTGCCCATGCATTCATTATAATTTTCTTTATAGTAATACCCATTATAATTGGAGGATTCGGAAATTGACTGGTACCTCTCATACTAGGAGCCCCTGATATAGCTTTTCCACGACTAAATAATATAAGATTCTGGCTATTACCCCCCTCACTTTCATTCTTAATCTTGAGAAGAATAGTGGAAAAAGGAGCTGGTACAGGATGAACTGTTTACCCACCTCTAGCCTCTAACATTGCACACAGAGGATCCTCTGTAGATTTAGCAATTTTTAGCCTACACATAGCAGGTGTCTCTTCAATCCTGGGAGCTATTAATTTTATTTCAACTGCTATCAACATACGTCCTCAAGGAATAAATTTAGATCAAATACCTTTATTTGTCTGAGCAGTGCTCATTACTGCTGTACTCCTTCTACTTAGCCTCCCTGTTTTAGCTGGAGCCATTACTATACTATTAACTGACCGTAATATTAACACTTGTTTTTTTGATCCAGCAGGTGGTGGAGATCCTATTCTATACCAACACCTTTTCTGATTTTT----"/>
+                        <sequence id="seq_MW3a1_LCO1490.ab1" spec="Sequence" taxon="MW3a1_LCO1490.ab1" totalcount="4" value="-------------------------------------------------CCCCCAGATCCTTCATCGGAAATGACCAAATTTATAATGTTATCGTCACTGCCCATGCATTCATTATAATTTTCTTTATAGTAATACCCATTATAATTGGAGGATTCGGAAATTGACTGGTACCTCTCATACTAGGAGCCCCTGATATAGCTTTTCCACGACTAAATAATATAAGATTCTGGCTATTACCCCCCTCACTTTCATTCTTAATCTTAAGAAGAATAGTGGAAAAAGGAGCTGGTACAGGATGAACTGTTTACCCACCTCTAGCCTCTAACATTGCACACAGAGGATCCTCTGTAGATTTAGCAATTTTTAGCCTACACATAGCGGGTGTCTCTTCAATCTTGGGAGCTATTAATTTTATTTCAACTGCTATCAACATACGTCCTCAAGGAATAAATTTAGATCAAATACCTTTATTTGTCTGAGCAGTTCTCATTACTGCTGTACTCCTTCTACTTAGCCTCCCTGTTTTAGCTGGAGCCATTACTATACTATTAACTGACCGTAATATTAACACTTGTTTTTTTGATCCAGCA------------------------------------------------"/>
+                        <sequence id="seq_MW4a2_LCO1490.ab1" spec="Sequence" taxon="MW4a2_LCO1490.ab1" totalcount="4" value="-------------------------------------------------------------------------ACCAAATTTATAATGTTATCGTCACTGCCCATGCATTCATTATAATTTTCTTTATAGTAATACCCATTATAATTGGAGGATTCGGAAATTGACTGGTACCTCTCATACTAGGAGCCCCTGATATAGCTTTTCCACGACTAAATAATATAAGATTCTGGCTATTACCCCCCTCACTTTCATTCTTAATCTTAAGAAGAATAGTGGAAAAAGGAGCTGGTACAGGATGAACTGTTTACCCACCTCTAGCCTCTAACATTGCACACAGAGGATCCTCTGTAGATTTAGCAATTTTTAGCCTACACATAGCGGGTGTCTCTTCAATCTTGGGAGCTATTAATTTTATTTCAACTGCTATCAACATACGTCCTCAAGGAATAAATTTAGATCAAATACCTTTATTTGTCTGAGCAGTTCTCATTACTGCTGTACTCCTTCTACTTAGCCTCCCTGTTTTAGCTGGAGCCATTACTATACTATTAACTGACCGTAATATTAACAC-------------------------------------------------------------------"/>
+                        <sequence id="seq_NCNP.Pom.M.1218.2.ab1" spec="Sequence" taxon="NCNP.Pom.M.1218.2.ab1" totalcount="4" value="-----CGTAGGAACCTCTCTAAGAATAATTATTCGAATCGAACTTGGTACTCCTGGATCTTTCATTGGCAATGATCAAATCTATAATGTTATTGTAACCGCTCACGCATTCATTATAATTTTCTTTATAGTAATACCTATTATAATTGGAGGATTTGGTAATTGATTAATCCCTCTTATATTAGGAGCTCCAGATATAGCTTTCCCGCGTATAAACAATATAAGATTCTGATTGTTACCACCTTCCTTATCCTTCTTAATTTTAAGAAGAATAGTAGAAAGAGGGGCAGGAACGGGATGAACTGTTTATCCTCCTCTAGCTTCAAATATCGCCCATAGAGGATCCTCCGTTGATCTTGCAATTTTTAGTTTACATATAGCAGGTGTTTCATCAATTTTAGGAGCTATTAACTTCATCTCTACTGCAATTAATATACGACCTCAAGGCATAAACTTAGATCAAATATCTCTATTTATTTGAGCCGTATTAATTACAGCAGTACTTCTTTTATTAAGACTCCCAGTTTTAGCTGGAGCCATCACTATATTACTAACAGATCGAAATATTAACACTTGCTTTTTTGATCCAGCCGGAGGAGGAGATCCCATTCTCTACCAACATCTATTCTGATTTTTTG--"/>
+                        <sequence id="seq_Ne7_G01.ab1" spec="Sequence" taxon="Ne7_G01.ab1" totalcount="4" value="----CTATCGGAACATCCTTAAGAATATTAATTCGAACAGAACTCGGAACCCCTGGACCATTCATCGGAAATGATCAAATTTACAACGTAATCGTAACTGCTCACGCCTTCGTAATAATCTTCTTCATAGTTATACCAATCCTAATCGGAGGATTCGGAAACTGACTTATTCCCCTTATATTAGGAGCCCCAGATATAGCCTTTCCACGGCTAAATAACCTAAGTTTTTGGTTACTTCCACCCTCTATTTCATTTCTATTAATAAGAAGAATTGTAGAAAAAGGGGCAGGAACAGGATGAACAGTATATCCCCCTCTATCATCTAATATTGCCCACAGAGGAACATCTGTAGACCTGGCTATCTTTAGCCTACACATAGCAGGAGTCTCCTCGATTCTAGGAGCTATCAATTTCATCTCAACTATTGCCAACATACGACCTGAAGGTATATTAACAGATCGAATAGCCCTATTCCCCTGAGCTGTAGAAATCACCGCAATCCTCCTTCTTCTATCCCTACCTGTTCTAGCCGGAGCTATTACTATACTACTAACTGACCGAAACATCAATACCTCCTTCTTTGATCCTGCAGGAGGGGGAGACCCCATCCTATACCAACACTTATTCTGATTTTTTGGT"/>
+                        <sequence id="seq_Ol18a1_LCO1490.ab1" spec="Sequence" taxon="Ol18a1_LCO1490.ab1" totalcount="4" value="---------------------------------------------GGTACCCCAAGATCCTTCATCGGAAATGACCAAATTTATAATGTTATCGTCACTGCCCATGCATTCATTATAATTTTCTTTATAGTAATACCCATTATAATTGGAGGATTCGGAAATTGACTAGTACCTCTCATACTAGGAGCCCCTGATATAGCTTTTCCACGACTAAATAATATAAGATTCTGGCTATTACCCCCCTCACTTTCATTCTTAATCTTGAGAAGAATAGTGGAAAAAGGAGCTGG-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+                        <sequence id="seq_Te4a1_LCO1490.ab1" spec="Sequence" taxon="Te4a1_LCO1490.ab1" totalcount="4" value="-----------------------------------------------------------------------------AATTTATAATGTTATCGTCACCGCCCATGCATTCATTATAATTTTCTTTATAGTAATACCCATTATAATTGGAGGATTTGGAAATTGACTGGTACCCCTTATACTAGGGGCCCCTGATATAGCTTTCCCCCGACTAAATAATATAAGATTCTGGCTATTACCCCCCTCACTTTCATTCTTAATCTTGAGCAGAATAGTGGAAAAAGGAGCTGGTACAGGATGAACTGTTTACCCGCCTCCAGCCGCTAACATTGCACACAGAGGA---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+                        <sequence id="seq_Te6a1_LCO1490.ab1" spec="Sequence" taxon="Te6a1_LCO1490.ab1" totalcount="4" value="-----------------------------------------------------------------CGGAAATGACCAAATTTATAATGTTATCGTCACCGCCCATGCATTCATTATAATTTTCTTTATAGTAATACCCATTATAATTGGAGGATTTGGAAATTGACTGGTACCCCTTATACTAGGGGCCCCTGATATAGCTTTCCCCCGACTAAATAATATAAGATTCTGGCTATTACCCCCCTCACTTTCATTCTTAATCTTGAGAAGAATAGTGGAAAAAGGAGCTGGTACAGGATGAACTGTTTACCCCCCTC-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+                        <sequence id="seq_WW4a1_LCO1490.ab1" spec="Sequence" taxon="WW4a1_LCO1490.ab1" totalcount="4" value="------------------------------------------------ACTCCTAGATCCTTTATTGGAAATGACCAAATTTATAATGTTATCGTAACTGCCCATGCATTCATTATAATTTTCTTTATAGTAATACCTATTATAATTGGAGGATTTGGAAATTGACTAGTTCCATTAATATTAGGAGCTCCTGATATAGCTTTCCCTCGCTTAAACAATATAAGATTCTGATTATTACCACCTTCACTTTCATTTTTAATTTTAAGAAGAATAGTAGAAAAAGGAGCCGGAACAGGATGAACTGTATATCCTCCTCTAGCCTCTAATATTGCACATAGAGGAGCTTCTGTAGATCTAGCAATTTTTAGTTTACATATAGCAGGTGTCTCTTCAATTTTAGGAGCTATTAATTTTATTTCAACTGCTATTAATATACGTCCACAAGGAATAAATATAGATCAAATACCTTTATTTGTCTGAGCTGTTCTTATTACAGCTGTATTACTCCTCTTAAGTCTCCCTGTCTTAGCCGGAGCTATTACTATATTATTAACTGATCGCAACATTAACACCTGTTTTTTTGACCCAGCAGGTGGAGGAGACCCAATCCTATACCAGCACCTTTTTTGATTTTT----"/>
+                    </data>
+
+
+    
+
+
+    
+
+
+    
+<map name="Uniform" >beast.math.distributions.Uniform</map>
+<map name="Exponential" >beast.math.distributions.Exponential</map>
+<map name="LogNormal" >beast.math.distributions.LogNormalDistributionModel</map>
+<map name="Normal" >beast.math.distributions.Normal</map>
+<map name="Beta" >beast.math.distributions.Beta</map>
+<map name="Gamma" >beast.math.distributions.Gamma</map>
+<map name="LaplaceDistribution" >beast.math.distributions.LaplaceDistribution</map>
+<map name="prior" >beast.math.distributions.Prior</map>
+<map name="InverseGamma" >beast.math.distributions.InverseGamma</map>
+<map name="OneOnX" >beast.math.distributions.OneOnX</map>
+
+
+<run id="mcmc" spec="MCMC" chainLength="100000000">
+    <state id="state" spec="State" storeEvery="5000">
+        <tree id="Tree.t:1stpos" spec="beast.evolution.tree.Tree" name="stateNode">
+            <taxonset id="TaxonSet.1stpos" spec="TaxonSet">
+                <alignment id="1stpos" spec="FilteredAlignment" filter="1-639\3">
+                    <data idref="AiCOI"/>
+                </alignment>
+            </taxonset>
+        </tree>
+        <stateNode id="BMT_ModelIndicator.s:1stpos" spec="parameter.IntegerParameter" lower="0" upper="5">5</stateNode>
+        <parameter id="BMT_Rates.s:1stpos" spec="parameter.RealParameter" dimension="6" lower="0.01" name="stateNode" upper="100.0">1.0</parameter>
+        <parameter id="BMT_gammaShape.s:1stpos" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
+        <parameter id="BMT_ProportionInvariable.s:1stpos" spec="parameter.RealParameter" lower="0.0" name="stateNode" upper="1.0">0.1</parameter>
+        <stateNode id="hasInvariableSites.s:1stpos" spec="parameter.IntegerParameter">1</stateNode>
+        <stateNode id="hasGammaRates.s:1stpos" spec="parameter.IntegerParameter">1</stateNode>
+        <stateNode id="hasEqualFreqs.s:1stpos" spec="parameter.BooleanParameter">false</stateNode>
+        <parameter id="BMT_frequencies.s:1stpos" spec="parameter.RealParameter" dimension="4" name="stateNode">0.25 0.25 0.25 0.25</parameter>
+        <stateNode id="BMT_ModelIndicator.s:2ndpos" spec="parameter.IntegerParameter" lower="0" upper="5">5</stateNode>
+        <parameter id="BMT_Rates.s:2ndpos" spec="parameter.RealParameter" dimension="6" lower="0.01" name="stateNode" upper="100.0">1.0</parameter>
+        <parameter id="BMT_gammaShape.s:2ndpos" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
+        <parameter id="BMT_ProportionInvariable.s:2ndpos" spec="parameter.RealParameter" lower="0.0" name="stateNode" upper="1.0">0.1</parameter>
+        <stateNode id="hasInvariableSites.s:2ndpos" spec="parameter.IntegerParameter">1</stateNode>
+        <stateNode id="hasGammaRates.s:2ndpos" spec="parameter.IntegerParameter">1</stateNode>
+        <stateNode id="hasEqualFreqs.s:2ndpos" spec="parameter.BooleanParameter">false</stateNode>
+        <parameter id="BMT_frequencies.s:2ndpos" spec="parameter.RealParameter" dimension="4" name="stateNode">0.25 0.25 0.25 0.25</parameter>
+        <stateNode id="BMT_ModelIndicator.s:3rdpos" spec="parameter.IntegerParameter" lower="0" upper="5">5</stateNode>
+        <parameter id="BMT_Rates.s:3rdpos" spec="parameter.RealParameter" dimension="6" lower="0.01" name="stateNode" upper="100.0">1.0</parameter>
+        <parameter id="BMT_gammaShape.s:3rdpos" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
+        <parameter id="BMT_ProportionInvariable.s:3rdpos" spec="parameter.RealParameter" lower="0.0" name="stateNode" upper="1.0">0.1</parameter>
+        <stateNode id="hasInvariableSites.s:3rdpos" spec="parameter.IntegerParameter">1</stateNode>
+        <stateNode id="hasGammaRates.s:3rdpos" spec="parameter.IntegerParameter">1</stateNode>
+        <stateNode id="hasEqualFreqs.s:3rdpos" spec="parameter.BooleanParameter">false</stateNode>
+        <parameter id="BMT_frequencies.s:3rdpos" spec="parameter.RealParameter" dimension="4" name="stateNode">0.25 0.25 0.25 0.25</parameter>
+        <parameter id="ucldStdev.c:1stpos" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.1</parameter>
+        <stateNode id="rateCategories.c:1stpos" spec="parameter.IntegerParameter" dimension="54">1</stateNode>
+        <parameter id="ucldStdev.c:2ndpos" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.1</parameter>
+        <stateNode id="rateCategories.c:2ndpos" spec="parameter.IntegerParameter" dimension="54">1</stateNode>
+        <parameter id="ucldStdev.c:3rdpos" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.1</parameter>
+        <stateNode id="rateCategories.c:3rdpos" spec="parameter.IntegerParameter" dimension="54">1</stateNode>
+        <parameter id="BDBirthRate.t:1stpos" spec="parameter.RealParameter" lower="0.0" name="stateNode" upper="10000.0">1.0</parameter>
+        <parameter id="BDDeathRate.t:1stpos" spec="parameter.RealParameter" lower="0.0" name="stateNode" upper="1.0">0.5</parameter>
+    </state>
+
+    <init id="RandomTree.t:1stpos" spec="beast.evolution.tree.RandomTree" estimate="false" initial="@Tree.t:1stpos" taxa="@1stpos">
+        <populationModel id="ConstantPopulation0.t:1stpos" spec="ConstantPopulation">
+            <parameter id="randomPopSize.t:1stpos" spec="parameter.RealParameter" name="popSize">1.0</parameter>
+        </populationModel>
+    </init>
+
+    <distribution id="posterior" spec="util.CompoundDistribution">
+        <distribution id="prior" spec="util.CompoundDistribution">
+            <distribution id="BirthDeath.t:1stpos" spec="beast.evolution.speciation.BirthDeathGernhard08Model" birthDiffRate="@BDBirthRate.t:1stpos" relativeDeathRate="@BDDeathRate.t:1stpos" tree="@Tree.t:1stpos"/>
+            <prior id="BirthRatePrior.t:1stpos" name="distribution" x="@BDBirthRate.t:1stpos">
+                <Uniform id="Uniform.12" name="distr" upper="1000.0"/>
+            </prior>
+            <prior id="DeathRatePrior.t:1stpos" name="distribution" x="@BDDeathRate.t:1stpos">
+                <Uniform id="Uniform.13" name="distr"/>
+            </prior>
+            <distribution id="BMT_PropInvariablePrior.s:1stpos" spec="beast.math.distributions.BMTPrior" count="@hasInvariableSites.s:1stpos" x="@BMT_ProportionInvariable.s:1stpos">
+                <Beta id="Beta.0" name="distr">
+                    <parameter id="RealParameter.4" spec="parameter.RealParameter" lower="0.0" name="alpha" upper="0.0">1.0</parameter>
+                    <parameter id="RealParameter.5" spec="parameter.RealParameter" lower="0.0" name="beta" upper="0.0">4.0</parameter>
+                </Beta>
+            </distribution>
+            <distribution id="BMT_PropInvariablePrior.s:2ndpos" spec="beast.math.distributions.BMTPrior" count="@hasInvariableSites.s:2ndpos" x="@BMT_ProportionInvariable.s:2ndpos">
+                <Beta id="Beta.0.2ndpos" name="distr">
+                    <parameter id="RealParameter.4.2ndpos" spec="parameter.RealParameter" lower="0.0" name="alpha" upper="0.0">1.0</parameter>
+                    <parameter id="RealParameter.5.2ndpos" spec="parameter.RealParameter" lower="0.0" name="beta" upper="0.0">4.0</parameter>
+                </Beta>
+            </distribution>
+            <distribution id="BMT_PropInvariablePrior.s:3rdpos" spec="beast.math.distributions.BMTPrior" count="@hasInvariableSites.s:3rdpos" x="@BMT_ProportionInvariable.s:3rdpos">
+                <Beta id="Beta.0.3rdpos" name="distr">
+                    <parameter id="RealParameter.4.3rdpos" spec="parameter.RealParameter" lower="0.0" name="alpha" upper="0.0">1.0</parameter>
+                    <parameter id="RealParameter.5.3rdpos" spec="parameter.RealParameter" lower="0.0" name="beta" upper="0.0">4.0</parameter>
+                </Beta>
+            </distribution>
+            <distribution id="BMT_RatesPrior.s:1stpos" spec="beast.math.distributions.NucleotideRevJumpSubstModelRatePrior" modelIndicator="@BMT_ModelIndicator.s:1stpos" x="@BMT_Rates.s:1stpos">
+                <substModel id="RevJump.s:1stpos" spec="NucleotideRevJumpSubstModel" modelIndicator="@BMT_ModelIndicator.s:1stpos" rates="@BMT_Rates.s:1stpos">
+                    <frequencies id="BMTfreqs.s:1stpos" spec="ModelFrequencies" empirical="false" frequencies="@BMT_frequencies.s:1stpos" hasEqualFreqs="@hasEqualFreqs.s:1stpos"/>
+                </substModel>
+                <Exponential id="BMT_RatesPrior.s:1stposx" name="distr"/>
+            </distribution>
+            <distribution id="BMT_RatesPrior.s:2ndpos" spec="beast.math.distributions.NucleotideRevJumpSubstModelRatePrior" distr="@BMT_RatesPrior.s:1stposx" modelIndicator="@BMT_ModelIndicator.s:2ndpos" x="@BMT_Rates.s:2ndpos">
+                <substModel id="RevJump.s:2ndpos" spec="NucleotideRevJumpSubstModel" modelIndicator="@BMT_ModelIndicator.s:2ndpos" rates="@BMT_Rates.s:2ndpos">
+                    <frequencies id="BMTfreqs.s:2ndpos" spec="ModelFrequencies" empirical="false" frequencies="@BMT_frequencies.s:2ndpos" hasEqualFreqs="@hasEqualFreqs.s:2ndpos"/>
+                </substModel>
+            </distribution>
+            <distribution id="BMT_RatesPrior.s:3rdpos" spec="beast.math.distributions.NucleotideRevJumpSubstModelRatePrior" distr="@BMT_RatesPrior.s:1stposx" modelIndicator="@BMT_ModelIndicator.s:3rdpos" x="@BMT_Rates.s:3rdpos">
+                <substModel id="RevJump.s:3rdpos" spec="NucleotideRevJumpSubstModel" modelIndicator="@BMT_ModelIndicator.s:3rdpos" rates="@BMT_Rates.s:3rdpos">
+                    <frequencies id="BMTfreqs.s:3rdpos" spec="ModelFrequencies" empirical="false" frequencies="@BMT_frequencies.s:3rdpos" hasEqualFreqs="@hasEqualFreqs.s:3rdpos"/>
+                </substModel>
+            </distribution>
+            <prior id="BMT_freqsPrior.s:1stpos" name="distribution" x="@BMT_frequencies.s:1stpos">
+                <distr id="Dirichlet.0" spec="beast.math.distributions.Dirichlet">
+                    <parameter id="RealParameter.6" spec="parameter.RealParameter" dimension="4" lower="0.0" name="alpha" upper="0.0">1.0 1.0 1.0 1.0</parameter>
+                </distr>
+            </prior>
+            <prior id="BMT_freqsPrior.s:2ndpos" name="distribution" x="@BMT_frequencies.s:2ndpos">
+                <distr id="Dirichlet.0.2ndpos" spec="beast.math.distributions.Dirichlet">
+                    <parameter id="RealParameter.6.2ndpos" spec="parameter.RealParameter" dimension="4" lower="0.0" name="alpha" upper="0.0">1.0 1.0 1.0 1.0</parameter>
+                </distr>
+            </prior>
+            <prior id="BMT_freqsPrior.s:3rdpos" name="distribution" x="@BMT_frequencies.s:3rdpos">
+                <distr id="Dirichlet.0.3rdpos" spec="beast.math.distributions.Dirichlet">
+                    <parameter id="RealParameter.6.3rdpos" spec="parameter.RealParameter" dimension="4" lower="0.0" name="alpha" upper="0.0">1.0 1.0 1.0 1.0</parameter>
+                </distr>
+            </prior>
+            <distribution id="BMT_GammaShapePrior.s:1stpos" spec="beast.math.distributions.BMTPrior" count="@hasGammaRates.s:1stpos" x="@BMT_gammaShape.s:1stpos">
+                <Exponential id="Exponential.3" name="distr">
+                    <parameter id="RealParameter.3" spec="parameter.RealParameter" estimate="false" lower="0.0" name="mean" upper="0.0">1.0</parameter>
+                </Exponential>
+            </distribution>
+            <distribution id="BMT_GammaShapePrior.s:2ndpos" spec="beast.math.distributions.BMTPrior" count="@hasGammaRates.s:2ndpos" x="@BMT_gammaShape.s:2ndpos">
+                <Exponential id="Exponential.3.2ndpos" name="distr">
+                    <parameter id="RealParameter.3.2ndpos" spec="parameter.RealParameter" estimate="false" lower="0.0" name="mean" upper="0.0">1.0</parameter>
+                </Exponential>
+            </distribution>
+            <distribution id="BMT_GammaShapePrior.s:3rdpos" spec="beast.math.distributions.BMTPrior" count="@hasGammaRates.s:3rdpos" x="@BMT_gammaShape.s:3rdpos">
+                <Exponential id="Exponential.3.3rdpos" name="distr">
+                    <parameter id="RealParameter.3.3rdpos" spec="parameter.RealParameter" estimate="false" lower="0.0" name="mean" upper="0.0">1.0</parameter>
+                </Exponential>
+            </distribution>
+            <prior id="ucldStdevPrior.c:1stpos" name="distribution" x="@ucldStdev.c:1stpos">
+                <Gamma id="Gamma.0" name="distr">
+                    <parameter id="RealParameter.8" spec="parameter.RealParameter" estimate="false" name="alpha">0.5396</parameter>
+                    <parameter id="RealParameter.9" spec="parameter.RealParameter" estimate="false" name="beta">0.3819</parameter>
+                </Gamma>
+            </prior>
+            <prior id="ucldStdevPrior.c:2ndpos" name="distribution" x="@ucldStdev.c:2ndpos">
+                <Gamma id="Gamma.1" name="distr">
+                    <parameter id="RealParameter.11" spec="parameter.RealParameter" estimate="false" name="alpha">0.5396</parameter>
+                    <parameter id="RealParameter.12" spec="parameter.RealParameter" estimate="false" name="beta">0.3819</parameter>
+                </Gamma>
+            </prior>
+            <prior id="ucldStdevPrior.c:3rdpos" name="distribution" x="@ucldStdev.c:3rdpos">
+                <Gamma id="Gamma.2" name="distr">
+                    <parameter id="RealParameter.14" spec="parameter.RealParameter" estimate="false" name="alpha">0.5396</parameter>
+                    <parameter id="RealParameter.15" spec="parameter.RealParameter" estimate="false" name="beta">0.3819</parameter>
+                </Gamma>
+            </prior>
+        </distribution>
+        <distribution id="likelihood" spec="util.CompoundDistribution" useThreads="true">
+            <distribution id="treeLikelihood.1stpos" spec="ThreadedTreeLikelihood" data="@1stpos" tree="@Tree.t:1stpos">
+                <siteModel id="BEASTModelTest.s:1stpos" spec="BEASTModelTestSiteModel" gammaCategoryCount="4" hasGammaRates="@hasGammaRates.s:1stpos" hasInvariantSites="@hasInvariableSites.s:1stpos" proportionInvariant="@BMT_ProportionInvariable.s:1stpos" shape="@BMT_gammaShape.s:1stpos" substModel="@RevJump.s:1stpos">
+                    <parameter id="BMT_mutationRate.s:1stpos" spec="parameter.RealParameter" estimate="false" name="mutationRate">1.0</parameter>
+                </siteModel>
+                <branchRateModel id="RelaxedClock.c:1stpos" spec="beast.evolution.branchratemodel.UCRelaxedClockModel" rateCategories="@rateCategories.c:1stpos" tree="@Tree.t:1stpos">
+                    <LogNormal id="LogNormalDistributionModel.c:1stpos" S="@ucldStdev.c:1stpos" meanInRealSpace="true" name="distr">
+                        <parameter id="RealParameter.7" spec="parameter.RealParameter" estimate="false" lower="0.0" name="M" upper="1.0">1.0</parameter>
+                    </LogNormal>
+                    <parameter id="ucldMean.c:1stpos" spec="parameter.RealParameter" estimate="false" name="clock.rate">1.0</parameter>
+                </branchRateModel>
+            </distribution>
+            <distribution id="treeLikelihood.2ndpos" spec="ThreadedTreeLikelihood" tree="@Tree.t:1stpos">
+                <data
+id="2ndpos"
+spec="FilteredAlignment"
+data="@AiCOI"
+filter="2-639\3"/>
+                <siteModel id="BEASTModelTest.s:2ndpos" spec="BEASTModelTestSiteModel" gammaCategoryCount="4" hasGammaRates="@hasGammaRates.s:2ndpos" hasInvariantSites="@hasInvariableSites.s:2ndpos" proportionInvariant="@BMT_ProportionInvariable.s:2ndpos" shape="@BMT_gammaShape.s:2ndpos" substModel="@RevJump.s:2ndpos">
+                    <parameter id="BMT_mutationRate.s:2ndpos" spec="parameter.RealParameter" estimate="false" name="mutationRate">1.0</parameter>
+                </siteModel>
+                <branchRateModel id="RelaxedClock.c:2ndpos" spec="beast.evolution.branchratemodel.UCRelaxedClockModel" rateCategories="@rateCategories.c:2ndpos" tree="@Tree.t:1stpos">
+                    <LogNormal id="LogNormalDistributionModel.c:2ndpos" S="@ucldStdev.c:2ndpos" meanInRealSpace="true" name="distr">
+                        <parameter id="RealParameter.10" spec="parameter.RealParameter" estimate="false" lower="0.0" name="M" upper="1.0">1.0</parameter>
+                    </LogNormal>
+                    <parameter id="ucldMean.c:2ndpos" spec="parameter.RealParameter" estimate="false" name="clock.rate">1.0</parameter>
+                </branchRateModel>
+            </distribution>
+            <distribution id="treeLikelihood.3rdpos" spec="ThreadedTreeLikelihood" tree="@Tree.t:1stpos">
+                <data
+id="3rdpos"
+spec="FilteredAlignment"
+data="@AiCOI"
+filter="3-639\3"/>
+                <siteModel id="BEASTModelTest.s:3rdpos" spec="BEASTModelTestSiteModel" gammaCategoryCount="4" hasGammaRates="@hasGammaRates.s:3rdpos" hasInvariantSites="@hasInvariableSites.s:3rdpos" proportionInvariant="@BMT_ProportionInvariable.s:3rdpos" shape="@BMT_gammaShape.s:3rdpos" substModel="@RevJump.s:3rdpos">
+                    <parameter id="BMT_mutationRate.s:3rdpos" spec="parameter.RealParameter" estimate="false" name="mutationRate">1.0</parameter>
+                </siteModel>
+                <branchRateModel id="RelaxedClock.c:3rdpos" spec="beast.evolution.branchratemodel.UCRelaxedClockModel" rateCategories="@rateCategories.c:3rdpos" tree="@Tree.t:1stpos">
+                    <LogNormal id="LogNormalDistributionModel.c:3rdpos" S="@ucldStdev.c:3rdpos" meanInRealSpace="true" name="distr">
+                        <parameter id="RealParameter.13" spec="parameter.RealParameter" estimate="false" lower="0.0" name="M" upper="1.0">1.0</parameter>
+                    </LogNormal>
+                    <parameter id="ucldMean.c:3rdpos" spec="parameter.RealParameter" estimate="false" name="clock.rate">1.0</parameter>
+                </branchRateModel>
+            </distribution>
+        </distribution>
+    </distribution>
+
+    <operator id="BMT_ModelTestOperator.s:1stpos" spec="BMTMergeSplitOperator" modelIndicator="@BMT_ModelIndicator.s:1stpos" rates="@BMT_Rates.s:1stpos" substModel="@RevJump.s:1stpos" weight="1.0"/>
+
+    <operator id="BMT_Ratescaler.s:1stpos" spec="BMTExchangeOperator" delta="0.15" modelIndicator="@BMT_ModelIndicator.s:1stpos" rates="@BMT_Rates.s:1stpos" substModel="@RevJump.s:1stpos" weight="1.0"/>
+
+    <operator id="BMT_gammaShapeScaler.s:1stpos" spec="BMTScaleOperator" count="@hasGammaRates.s:1stpos" parameter="@BMT_gammaShape.s:1stpos" scaleFactor="0.5" weight="0.5"/>
+
+    <operator id="BMT_ProportionInvariableScaler.s:1stpos" spec="BMTScaleOperator" count="@hasInvariableSites.s:1stpos" parameter="@BMT_ProportionInvariable.s:1stpos" scaleFactor="0.5" weight="0.5"/>
+
+    <operator id="BMT_hasGammaRatesFlipper.s:1stpos" spec="BMTBirthDeathOperator" count="@hasGammaRates.s:1stpos" rates="@BMT_gammaShape.s:1stpos" weight="0.1"/>
+
+    <operator id="BMT_hasInvariableSitesFlipper.s:1stpos" spec="BMTBirthDeathOperator" count="@hasInvariableSites.s:1stpos" rates="@BMT_ProportionInvariable.s:1stpos" weight="0.1"/>
+
+    <operator id="BMT_FreqsFlipOperator.s:1stpos" spec="BitFlipOperator" parameter="@hasEqualFreqs.s:1stpos" weight="0.1"/>
+
+    <operator id="BMT_FrequenciesExchanger.s:1stpos" spec="DeltaExchangeOperator" delta="0.01" weight="0.2">
+        <parameter idref="BMT_frequencies.s:1stpos"/>
+    </operator>
+
+    <operator id="BMT_ModelTestOperator.s:2ndpos" spec="BMTMergeSplitOperator" modelIndicator="@BMT_ModelIndicator.s:2ndpos" rates="@BMT_Rates.s:2ndpos" substModel="@RevJump.s:2ndpos" weight="1.0"/>
+
+    <operator id="BMT_Ratescaler.s:2ndpos" spec="BMTExchangeOperator" delta="0.15" modelIndicator="@BMT_ModelIndicator.s:2ndpos" rates="@BMT_Rates.s:2ndpos" substModel="@RevJump.s:2ndpos" weight="1.0"/>
+
+    <operator id="BMT_gammaShapeScaler.s:2ndpos" spec="BMTScaleOperator" count="@hasGammaRates.s:2ndpos" parameter="@BMT_gammaShape.s:2ndpos" scaleFactor="0.5" weight="0.5"/>
+
+    <operator id="BMT_ProportionInvariableScaler.s:2ndpos" spec="BMTScaleOperator" count="@hasInvariableSites.s:2ndpos" parameter="@BMT_ProportionInvariable.s:2ndpos" scaleFactor="0.5" weight="0.5"/>
+
+    <operator id="BMT_hasGammaRatesFlipper.s:2ndpos" spec="BMTBirthDeathOperator" count="@hasGammaRates.s:2ndpos" rates="@BMT_gammaShape.s:2ndpos" weight="0.1"/>
+
+    <operator id="BMT_hasInvariableSitesFlipper.s:2ndpos" spec="BMTBirthDeathOperator" count="@hasInvariableSites.s:2ndpos" rates="@BMT_ProportionInvariable.s:2ndpos" weight="0.1"/>
+
+    <operator id="BMT_FreqsFlipOperator.s:2ndpos" spec="BitFlipOperator" parameter="@hasEqualFreqs.s:2ndpos" weight="0.1"/>
+
+    <operator id="BMT_FrequenciesExchanger.s:2ndpos" spec="DeltaExchangeOperator" delta="0.01" weight="0.2">
+        <parameter idref="BMT_frequencies.s:2ndpos"/>
+    </operator>
+
+    <operator id="BMT_ModelTestOperator.s:3rdpos" spec="BMTMergeSplitOperator" modelIndicator="@BMT_ModelIndicator.s:3rdpos" rates="@BMT_Rates.s:3rdpos" substModel="@RevJump.s:3rdpos" weight="1.0"/>
+
+    <operator id="BMT_Ratescaler.s:3rdpos" spec="BMTExchangeOperator" delta="0.15" modelIndicator="@BMT_ModelIndicator.s:3rdpos" rates="@BMT_Rates.s:3rdpos" substModel="@RevJump.s:3rdpos" weight="1.0"/>
+
+    <operator id="BMT_gammaShapeScaler.s:3rdpos" spec="BMTScaleOperator" count="@hasGammaRates.s:3rdpos" parameter="@BMT_gammaShape.s:3rdpos" scaleFactor="0.5" weight="0.5"/>
+
+    <operator id="BMT_ProportionInvariableScaler.s:3rdpos" spec="BMTScaleOperator" count="@hasInvariableSites.s:3rdpos" parameter="@BMT_ProportionInvariable.s:3rdpos" scaleFactor="0.5" weight="0.5"/>
+
+    <operator id="BMT_hasGammaRatesFlipper.s:3rdpos" spec="BMTBirthDeathOperator" count="@hasGammaRates.s:3rdpos" rates="@BMT_gammaShape.s:3rdpos" weight="0.1"/>
+
+    <operator id="BMT_hasInvariableSitesFlipper.s:3rdpos" spec="BMTBirthDeathOperator" count="@hasInvariableSites.s:3rdpos" rates="@BMT_ProportionInvariable.s:3rdpos" weight="0.1"/>
+
+    <operator id="BMT_FreqsFlipOperator.s:3rdpos" spec="BitFlipOperator" parameter="@hasEqualFreqs.s:3rdpos" weight="0.1"/>
+
+    <operator id="BMT_FrequenciesExchanger.s:3rdpos" spec="DeltaExchangeOperator" delta="0.01" weight="0.2">
+        <parameter idref="BMT_frequencies.s:3rdpos"/>
+    </operator>
+
+    <operator id="ucldStdevScaler.c:1stpos" spec="ScaleOperator" parameter="@ucldStdev.c:1stpos" scaleFactor="0.5" weight="3.0"/>
+
+    <operator id="CategoriesRandomWalk.c:1stpos" spec="IntRandomWalkOperator" parameter="@rateCategories.c:1stpos" weight="10.0" windowSize="1"/>
+
+    <operator id="CategoriesSwapOperator.c:1stpos" spec="SwapOperator" intparameter="@rateCategories.c:1stpos" weight="10.0"/>
+
+    <operator id="CategoriesUniform.c:1stpos" spec="UniformOperator" parameter="@rateCategories.c:1stpos" weight="10.0"/>
+
+    <operator id="ucldStdevScaler.c:2ndpos" spec="ScaleOperator" parameter="@ucldStdev.c:2ndpos" scaleFactor="0.5" weight="3.0"/>
+
+    <operator id="CategoriesRandomWalk.c:2ndpos" spec="IntRandomWalkOperator" parameter="@rateCategories.c:2ndpos" weight="10.0" windowSize="1"/>
+
+    <operator id="CategoriesSwapOperator.c:2ndpos" spec="SwapOperator" intparameter="@rateCategories.c:2ndpos" weight="10.0"/>
+
+    <operator id="CategoriesUniform.c:2ndpos" spec="UniformOperator" parameter="@rateCategories.c:2ndpos" weight="10.0"/>
+
+    <operator id="ucldStdevScaler.c:3rdpos" spec="ScaleOperator" parameter="@ucldStdev.c:3rdpos" scaleFactor="0.5" weight="3.0"/>
+
+    <operator id="CategoriesRandomWalk.c:3rdpos" spec="IntRandomWalkOperator" parameter="@rateCategories.c:3rdpos" weight="10.0" windowSize="1"/>
+
+    <operator id="CategoriesSwapOperator.c:3rdpos" spec="SwapOperator" intparameter="@rateCategories.c:3rdpos" weight="10.0"/>
+
+    <operator id="CategoriesUniform.c:3rdpos" spec="UniformOperator" parameter="@rateCategories.c:3rdpos" weight="10.0"/>
+
+    <operator id="BirthDeathTreeScaler.t:1stpos" spec="ScaleOperator" scaleFactor="0.5" tree="@Tree.t:1stpos" weight="3.0"/>
+
+    <operator id="BirthDeathTreeRootScaler.t:1stpos" spec="ScaleOperator" rootOnly="true" scaleFactor="0.5" tree="@Tree.t:1stpos" weight="3.0"/>
+
+    <operator id="BirthDeathUniformOperator.t:1stpos" spec="Uniform" tree="@Tree.t:1stpos" weight="30.0"/>
+
+    <operator id="BirthDeathSubtreeSlide.t:1stpos" spec="SubtreeSlide" tree="@Tree.t:1stpos" weight="15.0"/>
+
+    <operator id="BirthDeathNarrow.t:1stpos" spec="Exchange" tree="@Tree.t:1stpos" weight="15.0"/>
+
+    <operator id="BirthDeathWide.t:1stpos" spec="Exchange" isNarrow="false" tree="@Tree.t:1stpos" weight="3.0"/>
+
+    <operator id="BirthDeathWilsonBalding.t:1stpos" spec="WilsonBalding" tree="@Tree.t:1stpos" weight="3.0"/>
+
+    <operator id="BirthRateScaler.t:1stpos" spec="ScaleOperator" parameter="@BDBirthRate.t:1stpos" weight="3.0"/>
+
+    <operator id="DeathRateScaler.t:1stpos" spec="ScaleOperator" parameter="@BDDeathRate.t:1stpos" weight="3.0"/>
+
+    <logger id="tracelog" spec="Logger" fileName="AiCOI.log" logEvery="10000" model="@posterior" sanitiseHeaders="true" sort="smart">
+        <log idref="posterior"/>
+        <log idref="likelihood"/>
+        <log idref="prior"/>
+        <log idref="treeLikelihood.1stpos"/>
+        <log id="TreeHeight.t:1stpos" spec="beast.evolution.tree.TreeHeightLogger" tree="@Tree.t:1stpos"/>
+        <log idref="treeLikelihood.2ndpos"/>
+        <log idref="treeLikelihood.3rdpos"/>
+        <log idref="RevJump.s:1stpos"/>
+        <log idref="BMT_ModelIndicator.s:1stpos"/>
+        <log idref="BMT_gammaShape.s:1stpos"/>
+        <log idref="BMT_ProportionInvariable.s:1stpos"/>
+        <log idref="hasGammaRates.s:1stpos"/>
+        <log idref="hasInvariableSites.s:1stpos"/>
+        <log id="ActivePropInvariable.s:1stpos" spec="beast.util.Script" argnames="BMT_ProportionInvariable hasInvariableSites" expression="BMT_ProportionInvariable * hasInvariableSites">
+            <x idref="BMT_ProportionInvariable.s:1stpos"/>
+            <x idref="hasInvariableSites.s:1stpos"/>
+        </log>
+        <log id="ActiveGammaShape.s:1stpos" spec="beast.util.Script" argnames="BMT_gammaShape hasGammaRates" expression="BMT_gammaShape * hasGammaRates">
+            <x idref="BMT_gammaShape.s:1stpos"/>
+            <x idref="hasGammaRates.s:1stpos"/>
+        </log>
+        <log idref="hasEqualFreqs.s:1stpos"/>
+        <log idref="BMT_frequencies.s:1stpos"/>
+        <log idref="RevJump.s:2ndpos"/>
+        <log idref="BMT_ModelIndicator.s:2ndpos"/>
+        <log idref="BMT_gammaShape.s:2ndpos"/>
+        <log idref="BMT_ProportionInvariable.s:2ndpos"/>
+        <log idref="hasGammaRates.s:2ndpos"/>
+        <log idref="hasInvariableSites.s:2ndpos"/>
+        <log id="ActivePropInvariable.s:2ndpos" spec="beast.util.Script" argnames="BMT_ProportionInvariable hasInvariableSites" expression="BMT_ProportionInvariable * hasInvariableSites">
+            <x idref="BMT_ProportionInvariable.s:2ndpos"/>
+            <x idref="hasInvariableSites.s:2ndpos"/>
+        </log>
+        <log id="ActiveGammaShape.s:2ndpos" spec="beast.util.Script" argnames="BMT_gammaShape hasGammaRates" expression="BMT_gammaShape * hasGammaRates">
+            <x idref="BMT_gammaShape.s:2ndpos"/>
+            <x idref="hasGammaRates.s:2ndpos"/>
+        </log>
+        <log idref="hasEqualFreqs.s:2ndpos"/>
+        <log idref="BMT_frequencies.s:2ndpos"/>
+        <log idref="RevJump.s:3rdpos"/>
+        <log idref="BMT_ModelIndicator.s:3rdpos"/>
+        <log idref="BMT_gammaShape.s:3rdpos"/>
+        <log idref="BMT_ProportionInvariable.s:3rdpos"/>
+        <log idref="hasGammaRates.s:3rdpos"/>
+        <log idref="hasInvariableSites.s:3rdpos"/>
+        <log id="ActivePropInvariable.s:3rdpos" spec="beast.util.Script" argnames="BMT_ProportionInvariable hasInvariableSites" expression="BMT_ProportionInvariable * hasInvariableSites">
+            <x idref="BMT_ProportionInvariable.s:3rdpos"/>
+            <x idref="hasInvariableSites.s:3rdpos"/>
+        </log>
+        <log id="ActiveGammaShape.s:3rdpos" spec="beast.util.Script" argnames="BMT_gammaShape hasGammaRates" expression="BMT_gammaShape * hasGammaRates">
+            <x idref="BMT_gammaShape.s:3rdpos"/>
+            <x idref="hasGammaRates.s:3rdpos"/>
+        </log>
+        <log idref="hasEqualFreqs.s:3rdpos"/>
+        <log idref="BMT_frequencies.s:3rdpos"/>
+        <log idref="ucldStdev.c:1stpos"/>
+        <log id="rate.c:1stpos" spec="beast.evolution.branchratemodel.RateStatistic" branchratemodel="@RelaxedClock.c:1stpos" tree="@Tree.t:1stpos"/>
+        <log idref="ucldStdev.c:2ndpos"/>
+        <log id="rate.c:2ndpos" spec="beast.evolution.branchratemodel.RateStatistic" branchratemodel="@RelaxedClock.c:2ndpos" tree="@Tree.t:1stpos"/>
+        <log idref="ucldStdev.c:3rdpos"/>
+        <log id="rate.c:3rdpos" spec="beast.evolution.branchratemodel.RateStatistic" branchratemodel="@RelaxedClock.c:3rdpos" tree="@Tree.t:1stpos"/>
+        <log idref="BirthDeath.t:1stpos"/>
+        <log idref="BDBirthRate.t:1stpos"/>
+        <log idref="BDDeathRate.t:1stpos"/>
+    </logger>
+
+    <logger id="screenlog" spec="Logger" logEvery="1000">
+        <log idref="posterior"/>
+        <log idref="likelihood"/>
+        <log idref="prior"/>
+    </logger>
+
+    <logger id="treelog.t:1stpos" spec="Logger" fileName="AiCOI$(tree).trees" logEvery="10000" mode="tree">
+        <log id="TreeWithMetaDataLogger.t:1stpos" spec="beast.evolution.tree.TreeWithMetaDataLogger" branchratemodel="@RelaxedClock.c:2ndpos" tree="@Tree.t:1stpos"/>
+    </logger>
+
+    <operatorschedule id="OperatorSchedule" spec="OperatorSchedule"/>
+
+</run>
+
+</beast>

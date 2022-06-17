@@ -1,0 +1,5 @@
+<itsabeastystatewerein version='2.0' sample='100000'>
+<statenode id='Tree.Ai'>(0:1.614118400153982,1:1.614118400153982)2:0.0</statenode>
+<statenode id='coalescenceRate'>coalescenceRate[3 1] (-Infinity,Infinity): 9.694137514701048 37.72619389897637 30.371814880282766 </statenode>
+<statenode id='lambda'>lambda[1 1] (0.0,Infinity): 0.56342533567246 </statenode>
+</itsabeastystatewerein>
