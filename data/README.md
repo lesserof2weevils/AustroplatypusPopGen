@@ -4,7 +4,7 @@ These are the raw and pre-processed data files provided by Diversity Arrays used
 
 ```Ai_ind_metrics_phylo.csv``` is the same metadata file as above, however, with reduced samples as used for phylogenetic analyses of SNP data
 
-```Report_DAmb20-5632_1_moreOrders_SNP_2_rename_ordered.csv``` is a derived file of the raw Report_DAmb20-5632_SNP_2.csv file, wherein the genotype fields have been changed to individual specimen IDs
+```Report_DAmb20-5632_1_moreOrders_SNP_2_rename_ordered.csv``` is a derived file of the raw ```Report_DAmb20-5632_SNP_2.csv``` file, wherein the genotype fields have been changed to individual specimen IDs
 
 ```Report_DAmb20-5632_SNP_2.csv``` is the raw processed SNP data file provided by Diversity Arrays Technology 
 
