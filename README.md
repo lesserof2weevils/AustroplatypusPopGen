@@ -1,0 +1,11 @@
+This is the repository of scripts and raw and processed data associated with the manuscript:
+
+>Bickerstaff JRM, Jordal BH, Riegler M (2024). Two for one – population genomics of the only eusocial beetle species, Austroplatypus incompertus, suggests the presence of a second species (2024). bioRxiv. doi: XXX
+
+Abstract:
+
+>Eusociality in insects has arisen multiple times independently in Hymenoptera (bees, wasps, ants), Blattodea (termites) and Coleoptera (beetles). In Hymenoptera and Blattodea, the evolution of eusociality has led to massive species proliferation. In the hyperdiverse Coleoptera, eusociality evolved only once, in the ancient Australian ambrosia beetle Austroplatypus incompertus (Curculionidae: Platypodinae). This species occurs in mesic eucalypt forests of eastern Australia, from Victoria to northern New South Wales (NSW). Based on limited sampling it was initially described as two distinct species which were later synonymised based on morphological analyses of more specimens. However, recent mitochondrial haplotype analyses have revealed substantial latitudinal divergence across the distribution of A. incompertus. To address this apparent disparity between molecular and morphological data, we developed and analysed a SNP panel of over 6,656 biallelic markers from 187 individuals collected throughout the species range using Diversity Array Technology sequencing. We found that isolation by distance had a strong confounding effect on genetic distances between pairs of individuals. However, after accounting for this spatial autocorrelation, we detected two lineages with no gene flow between them. We further found these distinct lineages in secondary contact on the Barrington Tops plateau with no discernible admixture. These results support the resurrection of a second species of Austroplatypus which will have critical implications for the unique evolution of eusociality in Coleoptera.
+
+All scripts are reproducible by downloading both the data and scripts directories. Analyses can be run through the ```.rproj``` to establish file structure for both data and scripts.
+
+Feel free to reach out to either James Bickerstaff or Markus Riegler (contact details in the manuscript) for more information regarding these analyses or the manuscript.
