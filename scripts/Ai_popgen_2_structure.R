@@ -9,7 +9,7 @@ libs <- c("dartR", "adegenet", "LEA", "conStruct", "parallel", "fields",
           "netview", "visreg", "devtools", "ggplot2", "tidyverse",
           "doBy", "plotly", "reshape", "ggspatial", "ozmaps", "sf",
           "ggrepel", "patchwork", 'viridis', 'raster', 'ggnewscale',
-          'patchwork', 'ggrepel', 'scatterpie') # Define a list of required packages
+          'patchwork', 'ggrepel', 'scatterpie', 'tidyverse') # Define a list of required packages
 
 # libraries we need
 installed_libs <- libs %in% rownames(installed.packages()) # Check which packages are installed
@@ -121,13 +121,35 @@ ggtheme = theme(axis.text.y = element_text(colour="black", size=12),
                 panel.background = element_blank(),
                 plot.title = element_text(hjust=0.5, size=15))
 
+# Define colors for populations (optional)
+population_colors <- c(
+  # North – cool blues & teals
+  'Dorrigo'        = '#1b9e77',  # teal green
+  'Kerewong'       = '#377eb8',  # mid blue
+  'NthBarrington'  = '#a6cee3',  # pale blue
+  
+  # Central – warm reds, purples, and browns
+  'SthBarrington'  = '#e41a1c',  # bright red
+  'Olney'          = '#984ea3',  # purple
+  'Cumberland'     = '#ff7f00',  # orange
+  'MtWilson'       = '#a65628',  # dark brown
+  'MaresForest'    = '#f781bf',  # pink
+  
+  # South – green/yellow tones
+  'Termeil'        = '#4daf4a',  # green
+  'Dampier'        = '#cce61d',  # lime
+  'Broadwater'     = '#006d2c'   # dark green
+)
+
 # Scatter plot for PCA
 p1 <- ggplot(data = ind_coords, aes(x = Axis1, y = Axis2)) +
   geom_point(aes(fill = population), shape = 21, size = 3, show.legend = TRUE) +  # Plot individuals
   stat_ellipse(aes(group = region), level = 0.99, color = "black", linetype = "solid", type = 'norm') +  # Add ellipses
   scale_fill_viridis_d(direction = -1) +  # Color scale
   labs(x = xlab, y = ylab) +
-  theme_classic(base_size = 17) + guides(fill = 'none') + labs(title = 'A)')  # Customize plot
+  theme_classic(base_size = 17) + 
+  guides(fill = 'none') + 
+  labs(title = 'A)')
 
 ##2.2. Run the dapc####
 glx <- readRDS(file = 'glx.rds')  # Load genlight object
@@ -157,14 +179,6 @@ dapc_data_df <-
            population %in% c('Termeil', 'Dampier', 'Broadwater') ~ 'South'
          ))
 
-# Define colors for populations (optional)
-population_colors <- c(
-  'Dorrigo' = '#1f77b4', 'Kerewong' = '#ff7f0e', 'NthBarrington' = '#2ca02c',
-  'SthBarrington' = '#d62728', 'Olney' = '#9467bd', 'Cumberland' = '#8c564b',
-  'MtWilson' = '#e377c2', 'MaresForest' = '#7f7f7f', 'Termeil' = '#bcbd22',
-  'Dampier' = '#17becf', 'Broadwater' = '#1f77b4'
-)
-
 # Calculate centroids for regions
 centroids <- dapc_data_df %>%
   group_by(region) %>%
@@ -173,7 +187,7 @@ centroids <- dapc_data_df %>%
 # Create the DAPC plot
 dapc_plot <- ggplot(dapc_data_df, aes(x = LD1, y = LD2, fill = population)) +
   geom_point(shape = 21, size = 3) +
-  scale_fill_viridis_d(direction = -1) +
+  scale_fill_viridis_d(direction = -1) +  # Color scale
   stat_ellipse(aes(group = region), level = 0.99, color = "black", linetype = "solid", type = 'norm') +
   theme_classic(base_size = 16) + labs(title = "B)")
 
@@ -205,24 +219,43 @@ ord_inverted <- rev(ord) # Invert the order for bottom triangle
 Fst_ordered <- fst_pair[ord, ord]
 
 # Convert the matrix to a long format
-Fst_long <- melt(fst_pair, na.rm = TRUE)
-
+Fst_long <- as.data.frame(fst_pair) %>%
+  mutate(X1 = rownames(.)) %>%
+  pivot_longer(
+    cols = -X1,
+    names_to = "X2",
+    values_to = "value"
+  )
 # Convert Var1 and Var2 to factors with the specified order
 Fst_long$X1 <- factor(Fst_long$X1, levels = ord_inverted)
 Fst_long$X2 <- factor(Fst_long$X2, levels = ord_inverted)
 
 # Rename populations for clarity
 Fst_long <- Fst_long %>%
-  mutate(X1 = recode(X1, 
-                     "SthBarrington" = "South Barrington",
-                     "NthBarrington" = "North Barrington",
-                     "MtWilson" = "Mount Wilson",
-                     "MaresForest" = "Mares Forest"),
-         X2 = recode(X2, 
-                     "SthBarrington" = "South Barrington",
-                     "NthBarrington" = "North Barrington",
-                     "MtWilson" = "Mount Wilson",
-                     "MaresForest" = "Mares Forest"))
+  mutate(X1 = recode(X1,
+                     "Dorrigo" = "Dorrigo (n)",
+                     "Kerewong" = "Kerewong (n)",
+                     "NthBarrington" = "NthBarrington (n)",
+                     "SthBarrington" = "SthBarrington (c)",
+                     "Olney" = "Olney (c)",
+                     "Cumberland" = "Cumberland (c)",
+                     "MtWilson" = "MtWilson (c)",
+                     "MaresForest" = "MaresForest (c)",
+                     "Termeil" = "Termeil (s)",
+                     "Dampier" = "Dampier (s)",
+                     "Broadwater" = "Broadwater (s)"),
+         X2 = recode(X2,
+                     "Dorrigo" = "Dorrigo (n)",
+                     "Kerewong" = "Kerewong (n)",
+                     "NthBarrington" = "NthBarrington (n)",
+                     "SthBarrington" = "SthBarrington (c)",
+                     "Olney" = "Olney (c)",
+                     "Cumberland" = "Cumberland (c)",
+                     "MtWilson" = "MtWilson (c)",
+                     "MaresForest" = "MaresForest (c)",
+                     "Termeil" = "Termeil (s)",
+                     "Dampier" = "Dampier (s)",
+                     "Broadwater" = "Broadwater (s)"))
 
 # Create the heatmap of Fst values
 fst_heatmap <- ggplot(Fst_long, aes(X1, X2, fill = value)) + 
@@ -307,6 +340,331 @@ ind.names <- glxunique$ind.names                          # Retrieve individual 
 xy <- as.matrix(glxunique$other$latlong)                  # Extract latitude and longitude coordinates as a matrix
 popDist <- rdist.earth(xy, xy, miles = FALSE, R = NULL)   # Calculate pairwise geographic distances between individuals
 
+## 4.8 Cross Validation ####
+
+# Cross validation for the non-spatial models
+library(LEA)
+# Make a .geno file from genlight object
+gl2geno(glxunique, outfile = 'glb_2_geno', outpath = './', verbose = NULL)
+
+# Run non-spatial cross-validation
+glb_2_nonspatial = snmf('glb_2_geno.lfmm',
+                        K = 1:11,
+                        entropy = TRUE,
+                        repetitions = 5,
+                        project = 'new',
+                        alpha = 10)
+
+glb_2_lfmm <- read.lfmm('./glb_2_geno.lfmm')
+replace_9_with_NA <- function(x) {
+  x[x == 9] <- NA
+  return(x)
+}
+glb_2_lfmm_NA <- apply(glb_2_lfmm, 2, replace_9_with_NA)
+
+all_glx.snmf = snmf("glb_2_geno.lfmm", 
+                    K = 1:11, 
+                    entropy = T, 
+                    ploidy = 2, 
+                    project="new", 
+                    repetitions = 100)  
+
+# Save and reload to be safe
+saveRDS(all_glx.snmf, file = 'glb_2_nonspatial.rds')
+all_glxunique.nonspatial <- readRDS('glb_2_nonspatial.rds')
+
+# Cross-validation for the spatial models
+library(tess3r)
+
+# Run tess3r (spatial)
+project <- tess3(X = glxunique, coord = xy, K = 1:11, method = 'projected.ls', ploidy = 2, max.iteration = 100, rep = 100)
+
+# Save spatial project
+saveRDS(project, file = "glb_2_spatial.rds")
+project <- readRDS("glb_2_spatial.rds")
+
+# Combine cross-validation results and plot with ggplot2
+library(ggplot2)
+library(dplyr)
+
+## Define range of K and number of repetitions
+K_vals <- 1:11
+n_reps <- 5  # Change to however many you ran
+
+## Extract from SNMF (non-spatial)
+cv_nonspatial <- expand.grid(K = K_vals, rep = 1:n_reps) |>
+  rowwise() |>
+  mutate(value = cross.entropy(all_glxunique.nonspatial, K = K, run = rep),
+         method = "sNMF") |>
+  ungroup()
+
+## Extract from tess3r (spatial)
+K_spatial <- 1:11  # Or whatever range you ran
+n_rep_spatial <- 5  # Again, adjust if needed
+
+cv_spatial <- expand.grid(K = K_spatial, rep = 1:n_rep_spatial) |>
+  rowwise() |>
+  mutate(value = list(cross.entropy(project, K = K, run = rep)),
+         method = "spatial") |>
+  ungroup() |>
+  mutate(value = unlist(value))
+
+# Make sure both 'value' columns are numeric (not list-columns)
+cv_nonspatial <- cv_nonspatial |> 
+  mutate(value = as.numeric(value))
+
+# Extract crossentropy values for each K
+cv_spatial <- purrr::map_dfr(
+  .x = seq_along(project),
+  .f = function(k) {
+    data.frame(
+      K = k,
+      rep = 1:length(project[[k]]$crossentropy),
+      value = project[[k]]$crossentropy,
+      method = "tess3r"
+    )
+  }
+)
+
+# Now combine
+cv_all <- bind_rows(cv_nonspatial, cv_spatial)
+
+# Plot with ggplot
+ggplot(cv_all, aes(x = K, y = value, color = method)) +
+  geom_jitter(width = 0.2, alpha = 0.6, size = 2) +
+  stat_summary(fun = mean, geom = "line", aes(group = method), size = 1) +
+  stat_summary(fun = mean, geom = "point", shape = 21, fill = "white", size = 2.5) +
+  theme_minimal() +
+  labs(title = "Cross-validation scores",
+       subtitle = "Spatial vs Non-Spatial models",
+       x = "Number of ancestral populations (K)",
+       y = "Cross-entropy",
+       color = "Model type") +
+  scale_x_continuous(breaks = unique(cv_all$K))
+
+ggplot(cv_all, aes(x = K, y = value, color = method)) +
+  geom_point(alpha = 0.6) +
+  geom_smooth(se = FALSE, method = "loess", span = 0.75) +
+  labs(title = "Cross-validation comparison",
+       x = "K-values",
+       y = "Cross-entropy",
+       color = "Analysis") +
+  theme_minimal()
+
+# Save as SVG
+ggsave("cross_validation_comparison.svg", width = 6, height = 5)
+
+# retrieve tess3 Q matrix for K = 4 clusters 
+q.matrix <- qmatrix(project, K = 4)
+
+k4_tess <- as.data.frame(q.matrix)
+k4_tess$ind <- glxunique$ind.names
+k4_tess$locality <- glxunique$pop    
+k4_tess$lat <- glxunique$other$latlon$lat
+k4_tess$lat<- as.numeric(gsub("−", "-", as.character(glxunique$other$latlon$lat)))
+k4_tess$lon <- glxunique$other$latlon$lon
+k4_tess <- k4_tess[,c(5:6, 1:4, 7:8)]
+colnames(k4_tess) <- c("ind", "pop", "P1", "P2", "P3", "P4", "lat", "lon")
+write.csv(k4_tess, "all_k4_tess_r68_latlong.csv", row.names = F)
+
+k4_tess_df <- k4_tess[3:7] %>% 
+  as_tibble() %>% 
+  mutate(individual = k4_tess$ind,
+         locality = k4_tess$pop)
+
+k4_tess_df_long <- k4_tess_df %>% 
+  pivot_longer(cols = starts_with("P"),
+               names_to = 'pop',
+               values_to = 'q')
+
+k4_tess_df_ordered <- k4_tess_df_long %>% 
+  group_by(individual) %>% 
+  mutate(likely_assignment = pop[which.max(q)],
+         assignment_prob = max(q)) %>% 
+  mutate(lat = -lat) %>% 
+  arrange(lat, likely_assignment, assignment_prob) %>% 
+  ungroup() %>% 
+  mutate(individual = forcats::fct_inorder(factor(individual)))
+
+k4_tess_df_ordered
+
+k4_q_palette <- c("blue","red","yellow","darkgreen")
+
+tess3rk4 <- k4_tess_df_ordered %>% 
+  ggplot() +
+  geom_col(aes(x = individual, y = q, fill = pop)) +
+  scale_fill_manual(values = k4_q_palette) +
+  labs(fill = 'ancestry assignment') +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 10), legend.position = 'none') +
+  ylab('Ancestry coefficient') + xlab('Individuals') + ggtitle('tess3r K=4')
+
+# retrieve tess3 Q matrix for K = 5 clusters 
+q.matrix5 <- qmatrix(project, K = 5)
+
+k5_tess <- as.data.frame(q.matrix5)
+k5_tess$ind <- glxunique$ind.names
+k5_tess$pop <- glxunique$pop    
+k5_tess$lat <- glxunique$other$latlon$lat
+k5_tess$lat<- as.numeric(gsub("−", "-", as.character(glxunique$other$latlon$lat)))
+k5_tess$lon <- glxunique$other$latlon$lon
+k5_tess <- k5_tess[,c(6:7, 1:5, 8:9)]
+colnames(k5_tess) <- c("ind", "pop", "P1", "P2", "P3", "P4", "P5", "lat", "lon")
+write.csv(k5_tess, "all_k4_tess_r68_latlong.csv", row.names = F)
+
+k5_tess_df <- k5_tess[3:8] %>% 
+  as_tibble() %>% 
+  mutate(individual = k5_tess$ind,
+         locality = k5_tess$pop)
+
+k5_tess_df_long <- k5_tess_df %>% 
+  pivot_longer(cols = starts_with("P"),
+               names_to = 'pop',
+               values_to = 'q')
+
+k5_tess_df_ordered <- k5_tess_df_long %>% 
+  group_by(individual) %>% 
+  mutate(likely_assignment = pop[which.max(q)],
+         assignment_prob = max(q)) %>% 
+  mutate(lat = -lat) %>% 
+  arrange(lat, likely_assignment, assignment_prob) %>% 
+  ungroup() %>% 
+  mutate(individual = forcats::fct_inorder(factor(individual)))
+
+k5_tess_df_ordered
+
+k5_q_palette <- c("blue","red","darkgreen","orange" ,"yellow")
+
+tess3rk5 <- k5_tess_df_ordered %>% 
+  ggplot() +
+  geom_col(aes(x = individual, y = q, fill = pop)) +
+  scale_fill_manual(values = k5_q_palette) +
+  labs(fill = 'ancestry assignment') +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 10), legend.position = 'none') +
+  ylab('Ancestry coefficient') + xlab('Individuals') + ggtitle('tess3r K=5')
+
+ggsave("k5_tess3r_plot.svg", plot = last_plot(), device = 'svg', path = './', dpi = 400)
+
+#Draw the non-spatial sNMF plots
+ce_4 = cross.entropy(all_glxunique.nonspatial, K = 4)
+best_4 <- which.min(ce_4)
+ce_5 = cross.entropy(all_glxunique.nonspatial, K = 5)
+best_5 <- which.min(ce_5)
+
+#4.3 Draw the plots for K= 4 and export the files
+k4 <- as.data.frame(Q(all_glxunique.nonspatial, K = 4, run = best_4))
+k4$ind <- glxunique$ind.names
+k4$pop <- glxunique$pop    
+k4$lat <- glxunique$other$latlon$lat
+k4$lat<- as.numeric(gsub("−", "-", as.character(glxunique$other$latlon$lat)))
+k4$lon <- glxunique$other$latlon$lon
+k4 <- k4[,c(5:6, 1:4, 7:8)]
+colnames(k4) <- c("ind", "pop", "P1", "P2", "P3", "P4", "lat", "lon")
+write.csv(k4, "all_k4_r68_latlong.csv", row.names = F)
+
+k4_df <- k4[3:7] %>% 
+  as_tibble() %>% 
+  mutate(individual = k4$ind,
+         locality = k4$pop)
+
+k4_df_long <- k4_df %>% 
+  pivot_longer(cols = starts_with("P"),
+               names_to = 'pop',
+               values_to = 'q')
+k4_df_ordered <- k4_df_long %>% 
+  group_by(individual) %>% 
+  mutate(likely_assignment = pop[which.max(q)],
+         assignment_prob = max(q)) %>% 
+  mutate(lat = -lat) %>% 
+  arrange(lat, likely_assignment, assignment_prob) %>% 
+  ungroup() %>% 
+  mutate(individual = forcats::fct_inorder(factor(individual)))
+
+k4_df_ordered
+
+k4_q_palette <- c("darkgreen","red","blue","yellow")
+
+snmfk4 <- k4_df_ordered %>% 
+  ggplot() +
+  geom_col(aes(x = individual, y = q, fill = pop)) +
+  scale_fill_manual(values = k4_q_palette) +
+  labs(fill = 'ancestry assignment') +
+  theme_minimal() +
+  theme(axis.text.x = element_blank(), axis.title.x = element_blank(), legend.position = 'none') +
+  ylab('Ancestry coefficient') + xlab('Individuals') + ggtitle('snmf K=4')
+
+ggsave("k4_snmf_plot.svg", plot = last_plot(), device = 'svg', path = './', dpi = 400)
+
+#Draw the plot for K = 5
+k5 <- as.data.frame(Q(all_glxunique.nonspatial, K = 5, run = best_5))
+k5$ind <- glxunique$ind.names
+k5$pop <- glxunique$pop    
+k5$lat <- glxunique$other$latlon$lat
+k5$lat<- as.numeric(gsub("−", "-", as.character(glxunique$other$latlon$lat)))
+k5$lon <- glxunique$other$latlon$lon
+k5 <- k5[,c(6:7, 1:5, 8:9)]
+colnames(k5) <- c("ind", "pop", "P1", "P2", "P3", "P4", "P5", "lat", "lon")
+write.csv(k5, "all_k5_latlong.csv", row.names = F)
+
+k5_df <- k5[3:8] %>% 
+  as_tibble() %>% 
+  mutate(individual = k5$ind,
+         locality = k5$pop)
+
+k5_df_long <- k5_df %>% 
+  pivot_longer(cols = starts_with("P"),
+               names_to = 'pop',
+               values_to = 'q')
+
+k5_df_ordered <- k5_df_long %>% 
+  group_by(individual) %>% 
+  mutate(likely_assignment = pop[which.max(q)],
+         assignment_prob = max(q)) %>% 
+  mutate(lat = -lat) %>% 
+  arrange(lat, likely_assignment, assignment_prob) %>% 
+  ungroup() %>% 
+  mutate(individual = forcats::fct_inorder(factor(individual)))
+
+k5_df_ordered
+
+k5_q_palette <- c("orange","darkgreen","yellow","blue","red")
+
+snmfk5 <- k5_df_ordered %>% 
+  ggplot() +
+  geom_col(aes(x = individual, y = q, fill = pop)) +
+  scale_fill_manual(values = k5_q_palette) +
+  labs(fill = 'ancestry assignment') +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 10), legend.position = 'none') +
+  ylab('Ancestry coefficient') + xlab('Individuals') + ggtitle('snmf K=5')
+
+ggsave("k5_snmf_plot.svg", plot = last_plot(), device = 'svg', path = './', dpi = 400)
+
+library(patchwork)
+
+# Remove legends and x-axis text/labels from all four plots
+tess3rk4_clean <- tess3rk4
+
+tess3rk5_clean <- tess3rk5 +
+  theme(legend.position = "none", axis.text.x = element_blank(), axis.title.x = element_blank())
+
+snmfk4_clean <- snmfk4 +
+  theme(legend.position = "none", axis.text.x = element_blank(), axis.title.x = element_blank())
+
+snmfk5_clean <- snmfk5 +
+  theme(legend.position = "none", axis.text.x = element_blank(), axis.title.x = element_blank())
+
+# Combine vertically
+combined_plot <-snmfk5_clean / snmfk4_clean/ tess3rk5_clean / tess3rk4_clean  +
+  plot_layout(ncol = 1)
+
+# Save the plot
+ggsave("combined_ancestry_barplots_clean.svg",
+       plot = combined_plot,
+       device = "svg",
+       width = 10, height = 12, dpi = 300)
+
 ## 4.2 Convert genlight file into a STRUCTURE file to be used by conStruct ####
 gl2structure(glxunique, indNames = ind.names, addcolumns = c(POP), ploidy = 2, exportMarkerNames = FALSE, 
              outfile = 'glxunique.str', outpath = 'data/derived')  # Export the genlight object to a STRUCTURE format file for conStruct analysis
@@ -317,8 +675,10 @@ Ai.construct <- structure2conStruct(
   onerowperind = FALSE,                      # Data is formatted with two rows per individual
   start.loci = 3,                            # Column index where loci data starts
   missing.datum = -9,                        # Indicator for missing data in the file
-  outfile = 'data/derived/Ai_construct'      # Output file name for conStruct
+  outfile = 'Ai_construct'      # Output file name for conStruct
 )  # Convert STRUCTURE file to conStruct format
+
+Ai.construct <- readRDS('data/derived/Ai_construct.RData')
 
 Ai.construct[1:5, 2:10]  # Display a subset of the converted data for verification
 
@@ -577,10 +937,10 @@ make.structure.plot(
 )
 
 # Convert admixture proportions to a data frame
-spk2 <- as.data.frame(admix.props)
+spk4 <- as.data.frame(admix.props)
 
 # Add individual names to the data frame
-spk2$ind <- rownames(data.block$coords)
+spk4$ind <- rownames(data.block$coords)
 
 # Create a data frame with individual names and their coordinates
 coords <- data.frame(ind = rownames(data.block$coords), data.block$coords)
@@ -590,30 +950,30 @@ pops <- data.frame(pop = glx$pop)
 pops$ind <- glx$ind.names
 
 # Merge admixture proportions with coordinates based on individual names
-spk2 <- merge(spk2, coords, by = "ind")
+spk4 <- merge(spk4, coords, by = "ind")
 
 # Merge the result with population data
-spk2 <- merge(spk2, pops, by = "ind")
+spk4 <- merge(spk4, pops, by = "ind")
 
 # Reorder columns for clarity
-spk2 <- spk2[, c(1, 6, 2:3, 4:5)]
+spk4 <- spk4[, c(1, 8, 2:5, 6:7)]
 
 # Rename columns for easier interpretation
-colnames(spk2) <- c("ind", "pop", "P1", "P2", "lat", "lon")
+colnames(spk4) <- c("ind", "pop", "P1", "P2","P3","P4", "lat", "lon")
 
 # Save the combined data frame to a CSV file
-write.csv(spk2, "spk2_latlong.csv", row.names = FALSE)
+write.csv(spk4, "spk2_latlong.csv", row.names = FALSE)
 
 # Select relevant columns and convert to a tibble
-spk2_df <- spk2[3:6] %>% 
+spk4_df <- spk4[3:7] %>% 
   as_tibble() %>% 
   mutate(
-    individual = spk2$ind,    # Add individual names
-    locality = spk2$pop       # Add population names
+    individual = spk4$ind,    # Add individual names
+    locality = spk4$pop       # Add population names
   )
 
 # Reshape data from wide to long format for plotting
-spk2_df_long <- spk2_df %>% 
+spk4_df_long <- spk4_df %>% 
   pivot_longer(
     cols = starts_with("P"),  # Columns starting with "P" (P1, P2)
     names_to = 'pop',         # New column for population components
@@ -621,7 +981,7 @@ spk2_df_long <- spk2_df %>%
   )
 
 # Order the data based on latitude and assignment probabilities
-spk2_df_ordered <- spk2_df_long %>% 
+spk4_df_ordered <- spk4_df_long %>% 
   group_by(individual) %>% 
   mutate(
     likely_assignment = pop[which.max(q)],  # Determine the population with the highest proportion
@@ -633,23 +993,19 @@ spk2_df_ordered <- spk2_df_long %>%
   mutate(individual = forcats::fct_inorder(factor(individual)))  # Preserve the order of individuals
 
 # Display the ordered data frame (optional)
-spk2_df_ordered
+spk4_df_ordered
 
 # Define a custom color palette for the plot
-spk2_q_palette <- c("gold", "blue")
+spk4_q_palette <- c("red", "blue","gold" , "darkgreen")
 
 # Plot the admixture proportions as a bar plot
-spk2_bar <- spk2_df_ordered %>% 
+spk4_bar <- spk4_df_ordered %>% 
   ggplot() +
   geom_col(aes(x = individual, y = q, fill = pop)) +    # Create stacked bars for each individual
-  scale_fill_manual(values = spk2_q_palette) +          # Apply the custom color palette
+  scale_fill_manual(values = spk4_q_palette) +          # Apply the custom color palette
   labs(fill = 'Ancestry Assignment') +                  # Label for the legend
   theme_minimal() +
-  theme(
-    axis.text.x = element_blank(),                      # Hide x-axis text
-    axis.title.x = element_blank(),                     # Hide x-axis title
-    legend.position = 'none'                            # Remove the legend
-  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 5), legend.position = 'none') +
   ylab('Admixture') + xlab('Individuals') +             # Axis labels
   ggtitle('Spatial Model K=2')                          # Plot title
 
@@ -659,8 +1015,8 @@ ggsave("spk2_barplot.svg", plot = spk2_bar, device = 'svg', path = './', dpi = 4
 # Repeat the process for spatial model K=3
 
 # Load the conStruct results and data block for spatial model K=3
-load('outputs/conStruct/spk3_conStruct.results.Robj')
-load('outputs/conStruct/spk3_data.block.Robj')
+load('outputs/conStruct/spk5_conStruct.results.Robj')
+load('outputs/conStruct/spk5_data.block.Robj')
 
 # Extract the admixture proportions
 admix.props <- conStruct.results$chain_1$MAP$admix.proportions
@@ -677,31 +1033,31 @@ make.structure.plot(
 )
 
 # Convert admixture proportions to a data frame
-spk3 <- as.data.frame(admix.props)
+spk5 <- as.data.frame(admix.props)
 
 # Add individual names
-spk3$ind <- rownames(data.block$coords)
+spk5$ind <- rownames(data.block$coords)
 
 # Create data frames for coordinates and populations
 coords <- data.frame(ind = rownames(data.block$coords), data.block$coords)
-pops <- data.frame(pop = glx$pop)
-pops$ind <- glx$ind.names
+pops <- data.frame(pop = glxunique$pop)
+pops$ind <- glxunique$ind.names
 
 # Merge data frames to combine all information
-spk3 <- merge(spk3, coords, by = "ind")
-spk3 <- merge(spk3, pops, by = "ind")
+spk5 <- merge(spk5, coords, by = "ind")
+spk5 <- merge(spk5, pops, by = "ind")
 
 # Reorder columns
-spk3 <- spk3[, c(1, 7, 2:4, 5:6)]
+spk5 <- spk5[, c(1, 9, 2:6, 7:7)]
 
 # Rename columns
-colnames(spk3) <- c("ind", "pop", "P1", "P2", "P3", "lat", "lon")
+colnames(spk5) <- c("ind", "pop", "P1", "P2", "P3","P4","P5", "lat", "lon")
 
 # Save to CSV
-write.csv(spk3, "spk3_latlong.csv", row.names = FALSE)
+write.csv(spk5, "spk5_latlong.csv", row.names = FALSE)
 
 # Select relevant columns and convert to a tibble
-spk3_df <- spk3[3:6] %>% 
+spk5_df <- spk5[3:6] %>% 
   as_tibble() %>% 
   mutate(
     individual = spk3$ind,
@@ -875,6 +1231,223 @@ nspk4_df <- nspk4[3:7] %>%
     individual = nspk4$ind,
     locality = nspk4$pop
   )
+
+glx <- readRDS('glx.rds')
+
+#Cross validation for the non-spatial models
+library(LEA)
+#4.1 First we need to make a .geno file from out genlight object
+gl2geno(glx, outfile = 'glb_2_geno', outpath = './', verbose = NULL)
+glb_2_snmf = snmf('glb_2_geno.lfmm',
+                  K=1:15,
+                  entropy = T,
+                  repetitions = 5,
+                  project = 'new',
+                  alpha = 1000)
+
+glb_2_lfmm <- read.lfmm('./glb_2_geno.lfmm')
+
+replace_9_with_NA <- function(x) {
+  x[x == 9] <- NA
+  return(x)
+}
+glb_2_lfmm_NA <- apply(glb_2_lfmm, 2, replace_9_with_NA)
+
+#4.2 First we test with snmf as our null hypothesis (and to match Renee's
+#mapping pipeline)
+all_glx.snmf = snmf("glb_2_geno.lfmm", K = 1:12, entropy = T, ploidy = 2, project="new", repetitions = 100)  
+
+saveRDS(all_glx.snmf, file = 'all_glx.snmf.rds')
+all_glx.snmf <- readRDS('all_glx.snmf.rds')
+
+CE_plot <- plot(all_glx.snmf, pch = 19, col = 'black',
+                main = 'smnf cross entropy')
+
+#Cross validation for the spatial models
+library(tess3r)
+
+# Run tess3 for a range of K values
+project <- tess3(X = glxunique,
+                 coord = xy,
+                 K = 1:6,
+                 ploidy = 2,
+                 rep = 5,             # repeat runs to assess stability
+                 max.iteration = 500,
+                 openMP.core.num = 1) # use more cores if desired
+
+# Plot cross-entropy to choose K
+# Save as SVG
+svg("cross_entropy_per_K.svg", width = 6, height = 5)
+
+# Your plot
+plot(project, pch = 19, col = "blue", main = "Cross-entropy per K",
+     xlab = "Values of K",
+     ylab = "Cross-validation score")
+
+# Close the device
+dev.off()
+
+
+# Extract ancestry coefficients for your chosen K
+bestK <- which.min(cross.entropy(project))
+Qmatrix <- qmatrix(project, K = bestK)
+
+# to run a cross-validation analysis
+# you have to specify:
+#       the numbers of layers you want to compare (K)
+#       the allele frequency data (freqs)
+#       the geographic distance matrix (geoDist)
+#       the sampling coordinates (coords)
+
+# Transpose to get individuals as rows
+Ai.construct <- t(Ai.construct)
+
+# Now assign rownames (individual IDs)
+rownames(Ai.construct) <- rownames(glx@other$latlon)[match(rownames(Ai.construct), rownames(glx@other$latlon))]
+
+# Now transpose back (if needed)
+Ai.construct <- t(Ai.construct)
+
+# Set column names to the row names (individual IDs)
+colnames(Ai.construct) <- rownames(glx@other$latlon)[match(colnames(Ai.construct), rownames(glx@other$latlon))]
+
+# Subset coordinates to match these individuals
+xy <- glx@other$latlon[match(colnames(Ai.construct), rownames(glx@other$latlon)), ]
+
+# Check that everything matches now
+ncol(Ai.construct) == nrow(xy)
+
+# Ensure coords are in matrix format
+xy <- as.matrix(xy)
+
+# Step 1: Manually assign data partitions
+parts <- conStruct:::make.data.partitions(
+  freqs = Ai.construct,
+  train.prop = 0.7,
+  n.reps = 3
+)
+# Step 2: Run x.validation with pre-computed partitions
+my.xvals <- x.validation(
+  freqs = Ai.construct,
+  data.partitions = parts,
+  geoDist = popDist,
+  coords = as.matrix(xy),
+  train.prop = 0.7,
+  n.reps = 3,
+  K = 1:5,
+  prefix = "xval_run",
+  n.iter = 1000,
+  make.figs = TRUE,
+  save.files = TRUE,
+  parallel = FALSE
+)
+
+for (prop in seq(0.7, 0.5, by = -0.05)) {
+  cat("Trying train.prop =", prop, "\n")
+  try({
+    parts <- conStruct:::make.data.partitions(freqs = Ai.construct, train.prop = prop, n.reps = 3)
+    my.xvals <- x.validation(
+      freqs = Ai.construct,
+      data.partitions = parts,
+      geoDist = popDist,
+      coords = as.matrix(xy),
+      train.prop = prop,
+      n.reps = 3,
+      K = 1:3,  # use smaller K for testing
+      prefix = paste0("xval_test_", prop),
+      n.iter = 500,
+      make.figs = FALSE,
+      save.files = FALSE,
+      parallel = FALSE
+    )
+    cat("✅ Success with train.prop =", prop, "\n")
+    break
+  }, silent = TRUE)
+}
+
+##4.8 Layer Contributions####
+
+###4.8.1 Spatial Models####
+
+# Initialise the matrix
+layer.contributions_spatial <- matrix(NA, nrow = 5, ncol = 5)
+
+# Load K = 1 data
+load("outputs/conStruct/spk1_conStruct.results.Robj")
+load("outputs/conStruct/spk1_data.block.Robj")
+
+# Calculate contributions for K=1
+layer.contributions_spatial[, 1] <- c(
+  calculate.layer.contribution(conStruct.results[[1]], data.block),
+  rep(0, 4)
+)
+tmp <- conStruct.results[[1]]$MAP$admix.proportions
+
+# Loop from K = 2 to 5
+for (i in 2:5) {
+  load(sprintf("outputs/conStruct/spk%d_conStruct.results.Robj", i))
+  load(sprintf("outputs/conStruct/spk%d_data.block.Robj", i))
+  
+  tmp.order <- match.layers.x.runs(tmp, conStruct.results[[1]]$MAP$admix.proportions)
+  
+  layer.contributions_spatial[, i] <- c(
+    calculate.layer.contribution(
+      conStruct.results = conStruct.results[[1]],
+      data.block = data.block,
+      layer.order = tmp.order
+    ),
+    rep(0, 5 - i)
+  )
+  
+  tmp <- conStruct.results[[1]]$MAP$admix.proportions[, tmp.order]
+}
+
+barplot(layer.contributions_spatial,
+        col=c("blue", "red", "goldenrod1", "forestgreen", "darkorchid1"),
+        xlab="",
+        ylab="layer contributions",
+        names.arg=paste0("K=",1:5))
+
+###4.8.2 Non-Spatial Models####
+
+# Initialise the matrix
+layer.contributions_nonspatial <- matrix(NA, nrow = 5, ncol = 5)
+
+# Load K = 1 data
+load("outputs/conStruct/nspk1_conStruct.results.Robj")
+load("outputs/conStruct/nspk1_data.block.Robj")
+
+# Calculate contributions for K=1
+layer.contributions_nonspatial[, 1] <- c(
+  calculate.layer.contribution(conStruct.results[[1]], data.block),
+  rep(0, 4)
+)
+tmp <- conStruct.results[[1]]$MAP$admix.proportions
+
+# Loop from K = 2 to 5
+for (i in 2:5) {
+  load(sprintf("outputs/conStruct/nspk%d_conStruct.results.Robj", i))
+  load(sprintf("outputs/conStruct/nspk%d_data.block.Robj", i))
+  
+  tmp.order <- match.layers.x.runs(tmp, conStruct.results[[1]]$MAP$admix.proportions)
+  
+  layer.contributions_nonspatial[, i] <- c(
+    calculate.layer.contribution(
+      conStruct.results = conStruct.results[[1]],
+      data.block = data.block,
+      layer.order = tmp.order
+    ),
+    rep(0, 5 - i)
+  )
+  
+  tmp <- conStruct.results[[1]]$MAP$admix.proportions[, tmp.order]
+}
+
+barplot(layer.contributions_nonspatial,
+        col=c("blue", "red", "goldenrod1", "forestgreen", "darkorchid1"),
+        xlab="",
+        ylab="layer contributions",
+        names.arg=paste0("K=",1:5))
 
 # Reshape data from wide to long format for plotting
 nspk4_df_long <- nspk4_df %>%

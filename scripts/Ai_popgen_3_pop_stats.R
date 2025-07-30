@@ -57,6 +57,9 @@ glFilt <- gl %>%
 nInd(glFilt)             # Number of individuals after filtering
 nLoc(glFilt)             # Number of loci after filtering
 levels(pop(glFilt))      # Population levels after filtering
+levels(gallery(glFilt))
+
+glFilt@other$ind.metrics$gallery
 
 # Apply the same filters to the northern dataset
 glNthFilt <- glNth %>%
@@ -97,6 +100,11 @@ levels(pop(glSthFilt))   # Population levels in the filtered southern dataset
 namesSth <- glSthFilt$ind.names  # Names of individuals
 write.csv(namesSth, file = 'data/derived/namesSth.csv')  # Save the names to a CSV file
 ind.callrate <- NA.posi(glSth)  # Identify positions with missing data
+
+# Read in hierarchical information for the all populations
+glFilt@strata <- data.frame(gallery = as.character(glFilt@other$ind.metrics$gallery)) # Convert the factor to a data frame
+glFilt@strata$pop <- glFilt@pop # Add in population data into strata assignment
+head(strata(glFilt, ~ pop/gallery, combine = FALSE))  # Preview strata assignments
 
 # Read in hierarchical information for the southern populations
 Sthhierarchy <- read.csv('data/derived/hierarchy_Sth.csv')
@@ -198,3 +206,12 @@ SthAMOVA                    # Display AMOVA results
 Sthamova.test <- randtest(SthAMOVA)  # Perform randomization test
 Sthamova.test               # Display test results
 plot(Sthamova.test)         # Plot the distribution of simulated statistics
+
+# Perform AMOVA for all populations
+AMOVA <- poppr.amova(glFilt, ~ pop/gallery, cutoff = 0.6, nperm = 999)
+AMOVA                    # Display AMOVA results
+amova.test <- randtest(AMOVA)  # Perform randomization test
+amova.test               # Display test results
+plot(amova.test)         # Plot the distribution of simulated statistics
+
+
