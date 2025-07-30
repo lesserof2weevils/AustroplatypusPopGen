@@ -1,6 +1,6 @@
 This is the repository of scripts and raw and processed data associated with the manuscript:
 
->Bickerstaff JRM, Jordal BH, Riegler M (2024). Biogeography and social family structure contribute to cryptic genomic divergence in the only obligate eusocial beetle species, Austroplatypus incompertus (Curculionidae: Platypodinae. (2024). Molecular Ecology. *accepted*.
+>Bickerstaff JRM, Jordal BH, Riegler M (2024). Biogeography and social family structure contribute to cryptic genomic divergence in the only obligate eusocial beetle species, Austroplatypus incompertus (Curculionidae: Platypodinae. Molecular Ecology. *accepted*.
 
 Abstract:
 
